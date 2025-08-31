@@ -2,8 +2,7 @@ import { memo, useState, useEffect, useRef } from "react";
 
 interface StatisticItem {
   id: string;
-  value: string;
-  numericValue: number;
+  targetNumber: number;
   suffix: string;
   labelEn: string;
   color: string;
@@ -13,20 +12,19 @@ interface StatisticsSectionProps {
   className?: string;
 }
 
-// Custom hook for number animation
+// Custom hook for number animation with exact target
 const useCountAnimation = (
   targetValue: number,
-  suffix: string,
   duration: number = 2000,
   isVisible: boolean = false
 ) => {
   const [currentValue, setCurrentValue] = useState(0);
-  const [isAnimating, setIsAnimating] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
-    if (!isVisible || isAnimating) return;
+    if (!isVisible || hasAnimated) return;
 
-    setIsAnimating(true);
+    setHasAnimated(true);
     const startTime = Date.now();
     const startValue = 0;
 
@@ -40,31 +38,20 @@ const useCountAnimation = (
       const easedProgress = easeOutCubic(progress);
 
       const newValue = startValue + (targetValue - startValue) * easedProgress;
-      setCurrentValue(newValue);
-
-      if (progress < 1) {
-        requestAnimationFrame(animate);
+      
+      if (progress >= 1) {
+        // Ensure we end exactly at target value
+        setCurrentValue(targetValue);
       } else {
-        setIsAnimating(false);
+        setCurrentValue(newValue);
+        requestAnimationFrame(animate);
       }
     };
 
     requestAnimationFrame(animate);
-  }, [targetValue, duration, isVisible, isAnimating]);
+  }, [targetValue, duration, isVisible, hasAnimated]);
 
-  // Format the display value
-  const formatValue = (value: number): string => {
-    if (suffix === '%') {
-      return `${Math.round(value)}%`;
-    } else if (suffix === 'k') {
-      return `${(value / 1000).toFixed(value >= 1000 ? 0 : 1)}k`;
-    } else if (suffix === 'M') {
-      return `${(value / 1000000).toFixed(value >= 1000000 ? 0 : 1)}M`;
-    }
-    return Math.round(value).toString();
-  };
-
-  return formatValue(currentValue);
+  return Math.round(currentValue);
 };
 
 // Custom hook for intersection observer
@@ -109,32 +96,28 @@ const StatisticsSection: React.FC<StatisticsSectionProps> = memo(({
   const statistics: StatisticItem[] = [
     {
       id: 'new-features',
-      value: '142',
-      numericValue: 142,
+      targetNumber: 142,
       suffix: '',
       labelEn: 'New Features',
       color: 'text-blue-600'
     },
     {
       id: 'app-downloads',
-      value: '28k',
-      numericValue: 28000,
+      targetNumber: 28,
       suffix: 'k',
       labelEn: 'App Download',
       color: 'text-green-600'
     },
     {
       id: 'active-users',
-      value: '53M',
-      numericValue: 53000000,
+      targetNumber: 53,
       suffix: 'M',
       labelEn: 'Active Users',
       color: 'text-orange-600'
     },
     {
       id: 'positive-rate',
-      value: '90%',
-      numericValue: 90,
+      targetNumber: 90,
       suffix: '%',
       labelEn: 'Positive Rate',
       color: 'text-purple-600'
@@ -176,9 +159,8 @@ const StatisticsSection: React.FC<StatisticsSectionProps> = memo(({
         {/* Statistics Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {statistics.map((stat, index) => {
-            const animatedValue = useCountAnimation(
-              stat.numericValue,
-              stat.suffix,
+            const animatedNumber = useCountAnimation(
+              stat.targetNumber,
               2000 + (index * 200), // Stagger animation timing
               isVisible
             );
@@ -198,9 +180,9 @@ const StatisticsSection: React.FC<StatisticsSectionProps> = memo(({
                       fontFamily: 'Inter, sans-serif',
                       transitionDelay: `${index * 100}ms`
                     }}
-                    aria-label={`${stat.value} ${stat.labelEn}`}
+                    aria-label={`${animatedNumber}${stat.suffix} ${stat.labelEn}`}
                   >
-                    {animatedValue}
+                    {animatedNumber}{stat.suffix}
                   </div>
                   
                   <p 
