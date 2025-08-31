@@ -1,54 +1,77 @@
-import deviceMockup from "@/assets/device-mockup.png";
+import { useState, useEffect } from "react";
 
 const HeroSection = () => {
   return (
-    <section className="w-full px-6 py-12 lg:py-20">
-      <div className="max-w-7xl mx-auto">
+    <section className="relative w-full bg-[#EDEDED] overflow-hidden">
+      {/* Right gradient half circle */}
+      <div className="absolute top-0 right-0 w-96 h-full right-gradient-circle transform translate-x-48 rounded-l-full"></div>
+      
+      <div className="relative max-w-7xl mx-auto px-6 py-12 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
-            {/* Arabic Heading */}
+          <div className="space-y-8 relative z-10">
+            {/* Arabic Heading - حلول ذكية */}
             <div className="space-y-4">
-              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-tight" style={{ direction: 'rtl' }}>
+              <h1 
+                className="text-brand-dark font-bold leading-tight" 
+                style={{ 
+                  direction: 'rtl',
+                  fontSize: '65px',
+                  width: '365.23px',
+                  height: '79.56px',
+                  fontFamily: 'DIN Next LT Arabic, Inter, sans-serif'
+                }}
+              >
                 حلول ذكية
-                <br />
-                لمستقبل أفضل
               </h1>
               
-              {/* English Heading */}
-              <h2 className="text-3xl lg:text-4xl font-semibold text-primary">
-                Smart Solutions
+              {/* Arabic Subtitle - لمستقبل افضل */}
+              <h2 
+                className="text-brand-dark leading-tight"
+                style={{ 
+                  direction: 'rtl',
+                  fontSize: '65px',
+                  width: '648.77px',
+                  height: '80px',
+                  fontFamily: 'DIN Next LT Arabic, Inter, sans-serif'
+                }}
+              >
+                لمستقبل افضل
               </h2>
+              
+              {/* English Heading */}
+              <h3 
+                className="text-brand-dark font-bold leading-tight"
+                style={{ 
+                  fontSize: '65px',
+                  width: '494.39px',
+                  height: '79.56px',
+                  fontFamily: 'Inter, sans-serif'
+                }}
+              >
+                Smart Solutions
+              </h3>
             </div>
 
-            {/* Logo */}
-            <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-light to-primary rounded-xl flex items-center justify-center shadow-medium">
-                <span className="text-primary-foreground font-bold text-2xl">R</span>
-              </div>
-              <span className="text-4xl font-light text-primary-light">Pay</span>
+            {/* R.Pay Logo */}
+            <div className="mt-8">
+              <img 
+                src="https://via.placeholder.com/332x151/54B1F2/FFFFFF?text=R.Pay"
+                alt="R.Pay Logo"
+                style={{ width: '332.26px', height: '150.72px' }}
+                className="object-contain"
+              />
             </div>
-
-            {/* Description */}
-            <p className="text-lg text-muted-foreground max-w-md leading-relaxed">
-              Experience the future of payments with our intelligent, secure, and user-friendly platform designed for modern businesses.
-            </p>
           </div>
 
           {/* Right Content - Device Mockup */}
-          <div className="relative">
-            <div className="relative z-10">
-              <img 
-                src={deviceMockup} 
-                alt="R.Pay Dashboard on devices - showing payment terminals, reports, and transaction management interface"
-                className="w-full h-auto object-contain drop-shadow-2xl"
-              />
-            </div>
-            
-            {/* Background Decorative Elements */}
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-primary-light/10 rounded-3xl transform rotate-3 scale-105 -z-10"></div>
-            <div className="absolute -top-4 -right-4 w-32 h-32 bg-primary/10 rounded-full blur-2xl -z-20"></div>
-            <div className="absolute -bottom-8 -left-8 w-48 h-48 bg-primary-light/15 rounded-full blur-3xl -z-20"></div>
+          <div className="relative z-10">
+            <img 
+              src="https://via.placeholder.com/1155x716/333333/FFFFFF?text=Dashboard+Mockup"
+              alt="R.Pay Dashboard on devices"
+              style={{ width: '1154.5px', height: '716px' }}
+              className="w-full h-auto object-contain"
+            />
           </div>
         </div>
       </div>
