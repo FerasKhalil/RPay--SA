@@ -1,26 +1,26 @@
 const AboutSection = () => {
   return (
     <section className="relative w-full bg-[#EDEDED] overflow-hidden min-h-screen">
-      {/* Left gradient half circle */}
-      <div className="absolute top-0 left-0 w-96 h-full left-gradient-circle transform -translate-x-48 rounded-r-full"></div>
+      {/* Left gradient half circle - Full height */}
+      <div className="absolute top-0 left-0 w-80 h-full left-gradient-circle rounded-r-full"></div>
       
       <div className="relative w-full h-full">
         {/* Left Content - Image */}
         <div 
-          className="absolute z-10"
+          className="absolute z-10 hidden lg:block"
           style={{ left: '0px', top: '1420px' }}
         >
           <img 
             src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=652&h=607&fit=crop"
             alt="R.Pay Mobile App Preview"
             style={{ width: '652.24px', height: '607px' }}
-            className="w-full h-auto object-cover rounded-lg shadow-lg"
+            className="w-full h-auto object-cover"
           />
         </div>
 
         {/* Arabic Heading - عن ار باي */}
         <div 
-          className="absolute z-10"
+          className="absolute z-10 hidden lg:block"
           style={{ left: '1171.56px', top: '1428.23px' }}
         >
           <h2 
@@ -39,7 +39,7 @@ const AboutSection = () => {
         
         {/* Arabic Description */}
         <div 
-          className="absolute z-10"
+          className="absolute z-10 hidden lg:block"
           style={{ left: '595px', top: '1541.59px' }}
         >
           <p 
@@ -58,7 +58,7 @@ const AboutSection = () => {
 
         {/* English Heading - About R Pay */}
         <div 
-          className="absolute z-10"
+          className="absolute z-10 hidden lg:block"
           style={{ left: '607.4px', top: '1718.72px' }}
         >
           <h3 
@@ -76,7 +76,7 @@ const AboutSection = () => {
         
         {/* English Description */}
         <div 
-          className="absolute z-10"
+          className="absolute z-10 hidden lg:block"
           style={{ left: '607.4px', top: '1821.45px' }}
         >
           <p 

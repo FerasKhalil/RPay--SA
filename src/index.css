@@ -152,7 +152,7 @@
   }
 
   .logos-scroll {
-    animation: scroll-left 20s linear infinite;
+    animation: scroll-left 30s linear infinite;
   }
 
   @keyframes scroll-left {
@@ -160,7 +160,7 @@
       transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%);
+      transform: translateX(-33.333%);
     }
   }
 

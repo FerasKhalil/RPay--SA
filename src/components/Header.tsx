@@ -6,11 +6,11 @@ const Header = () => {
       <nav className="relative w-full h-full">
         {/* Logo - Positioned absolutely */}
         <div 
-          className="absolute z-10"
+          className="absolute z-10 hidden lg:block"
           style={{ left: '32px', top: '133px' }}
         >
           <img 
-            src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=113&h=51&fit=crop"
+            src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=113&h=51&fit=crop"
             alt="R.Pay Logo"
             style={{ width: '113px', height: '51.26px' }}
             className="object-cover rounded"
@@ -19,26 +19,26 @@ const Header = () => {
 
         {/* Navigation Menu - Positioned absolutely */}
         <div 
-          className="absolute z-10 hidden lg:flex items-center justify-center"
+          className="absolute z-10 hidden lg:flex items-center"
           style={{ left: '145px', top: '145px', width: '1006px', height: '28.14px' }}
         >
-          <div className="flex items-center space-x-8">
-            <Button variant="ghost" className="text-primary font-medium bg-primary/10 hover:bg-primary/20">
+          <div className="flex items-center space-x-6 text-sm">
+            <Button variant="ghost" className="text-primary font-medium bg-primary/10 hover:bg-primary/20 px-4 py-2">
               الرئيسية Home
             </Button>
-            <Button variant="ghost" className="text-gray-600 hover:text-gray-900">
+            <Button variant="ghost" className="text-gray-600 hover:text-gray-900 px-4 py-2">
               عن R Pay About R Pay
             </Button>
-            <Button variant="ghost" className="text-gray-600 hover:text-gray-900">
+            <Button variant="ghost" className="text-gray-600 hover:text-gray-900 px-4 py-2">
               مهامنا Our Mission
             </Button>
-            <Button variant="ghost" className="text-gray-600 hover:text-gray-900">
+            <Button variant="ghost" className="text-gray-600 hover:text-gray-900 px-4 py-2">
               المميزات Features
             </Button>
-            <Button variant="ghost" className="text-gray-600 hover:text-gray-900">
+            <Button variant="ghost" className="text-gray-600 hover:text-gray-900 px-4 py-2">
               الأجهزة Device
             </Button>
-            <Button variant="ghost" className="text-gray-600 hover:text-gray-900">
+            <Button variant="ghost" className="text-gray-600 hover:text-gray-900 px-4 py-2">
               الدفع الذكي المتقدم Integrated Smart
             </Button>
           </div>
@@ -48,7 +48,7 @@ const Header = () => {
         <div className="block lg:hidden max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <img 
-              src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=113&h=51&fit=crop"
+              src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=113&h=51&fit=crop"
               alt="R.Pay Logo"
               className="w-20 h-auto object-cover rounded"
             />
