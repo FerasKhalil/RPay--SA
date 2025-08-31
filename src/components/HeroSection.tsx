@@ -7,14 +7,12 @@ interface HeroSectionProps {
 const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
   return (
     <section 
-      className={`relative w-full bg-[#EDEDED] overflow-hidden min-h-screen ${className}`}
+      className={`relative w-full overflow-hidden min-h-screen ${className}`}
+      style={{
+        background: 'linear-gradient(135deg, #4387C7 0%, #214261 100%)'
+      }}
       aria-labelledby="hero-heading"
     >
-      {/* Right gradient half circle - Full height */}
-      <div 
-        className="absolute top-0 right-0 w-80 h-full right-gradient-circle rounded-l-full" 
-        aria-hidden="true"
-      />
       
       <div className="relative w-full h-full">
         {/* Device Mockup - Desktop positioned absolutely */}
@@ -23,7 +21,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
           style={{ left: '453px', top: '312px' }}
         >
           <img 
-            src="/lovable-uploads/ab03388b-9ae5-4ff1-92a5-d92d04875365.png"
+            src="/lovable-uploads/ba46e715-85a6-4b8c-b71c-485d882f82de.png"
             alt="R.Pay dashboard interface displayed on laptop and mobile devices showing analytics and payment management"
             style={{ width: '1154.5px', height: '716px' }}
             className="w-full h-auto object-contain"
@@ -38,7 +36,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
           style={{ left: '193.25px', top: '450px' }}
         >
           <h1 
-            className="text-brand-dark font-bold leading-tight" 
+            className="text-white font-bold leading-tight" 
             style={{ 
               direction: 'rtl',
               fontSize: '65px',
@@ -58,7 +56,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
           style={{ left: '51px', top: '534.23px' }}
         >
           <h2 
-            className="text-brand-dark leading-tight"
+            className="text-white leading-tight"
             style={{ 
               direction: 'rtl',
               fontSize: '65px',
@@ -77,7 +75,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
           style={{ left: '128.66px', top: '618.44px' }}
         >
           <h3 
-            className="text-brand-dark font-bold leading-tight"
+            className="text-white font-bold leading-tight"
             style={{ 
               fontSize: '65px',
               width: '494.39px',
@@ -89,18 +87,19 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
           </h3>
         </div>
 
-        {/* R.Pay Logo */}
+        {/* R.Pay Logo in Blue Frame */}
         <div 
           className="absolute z-10 hidden lg:block"
           style={{ left: '218px', top: '722px' }}
         >
-          <img 
-            src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=332&h=151&fit=crop"
-            alt="R.Pay company logo"
-            style={{ width: '332.26px', height: '150.72px' }}
-            className="object-contain"
-            loading="lazy"
-          />
+          <div className="bg-white p-4 rounded-lg shadow-lg" style={{ width: '332.26px', height: '150.72px' }}>
+            <img 
+              src="/lovable-uploads/98afb416-bf26-43aa-87c9-a5336bb6f2bb.png"
+              alt="R.Pay company logo"
+              className="w-full h-full object-contain"
+              loading="lazy"
+            />
+          </div>
         </div>
       </div>
 
@@ -109,7 +108,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
         <div className="space-y-8 relative z-10">
           <header className="space-y-4 text-center">
             <h1 
-              className="text-brand-dark font-bold text-4xl" 
+              className="text-white font-bold text-4xl" 
               style={{ 
                 direction: 'rtl', 
                 fontFamily: 'DIN Next LT Arabic, Inter, sans-serif' 
@@ -118,7 +117,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
               حلول ذكية
             </h1>
             <h2 
-              className="text-brand-dark text-4xl" 
+              className="text-white text-4xl" 
               style={{ 
                 direction: 'rtl', 
                 fontFamily: 'DIN Next LT Arabic, Inter, sans-serif' 
@@ -126,20 +125,22 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
             >
               لمستقبل أفضل
             </h2>
-            <h3 className="text-brand-dark font-bold text-4xl">
+            <h3 className="text-white font-bold text-4xl">
               Smart Solutions
             </h3>
           </header>
           
-          <img 
-            src="https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=332&h=151&fit=crop"
-            alt="R.Pay company logo"
-            className="w-64 h-auto object-contain mx-auto"
-            loading="lazy"
-          />
+          <div className="bg-white p-4 rounded-lg shadow-lg mx-auto w-64">
+            <img 
+              src="/lovable-uploads/98afb416-bf26-43aa-87c9-a5336bb6f2bb.png"
+              alt="R.Pay company logo"
+              className="w-full h-auto object-contain"
+              loading="lazy"
+            />
+          </div>
           
           <img 
-            src="/lovable-uploads/ab03388b-9ae5-4ff1-92a5-d92d04875365.png"
+            src="/lovable-uploads/ba46e715-85a6-4b8c-b71c-485d882f82de.png"
             alt="R.Pay dashboard interface"
             className="w-full h-auto object-contain"
             loading="lazy"
