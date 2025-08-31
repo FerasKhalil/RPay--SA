@@ -9,6 +9,7 @@ import StatisticsSection from "@/components/StatisticsSection";
 import DevicesSection from "@/components/DevicesSection";
 import IntegratedPaymentSection from "@/components/IntegratedPaymentSection";
 import CallToActionSection from "@/components/CallToActionSection";
+import Footer from "@/components/Footer";
 
 const Index: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const Index: React.FC = () => {
       <DevicesSection />
       <IntegratedPaymentSection />
       <CallToActionSection />
+      <Footer />
     </div>
   );
 };
