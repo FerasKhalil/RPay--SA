@@ -1,164 +1,242 @@
 import { memo } from "react";
 
+interface PaymentMethod {
+  id: string;
+  name: string;
+  logo: string;
+  alt: string;
+}
+
 interface HeroSectionProps {
   className?: string;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
+const HeroSection: React.FC<HeroSectionProps> = memo(({
+  className = ""
+}) => {
+  const paymentMethods: PaymentMethod[] = [
+    {
+      id: 'mada',
+      name: 'Mada',
+      logo: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=60&h=40&fit=crop',
+      alt: 'Mada payment card logo'
+    },
+    {
+      id: 'mastercard',
+      name: 'Mastercard',
+      logo: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=60&h=40&fit=crop',
+      alt: 'Mastercard payment logo'
+    },
+    {
+      id: 'american-express',
+      name: 'American Express',
+      logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=60&h=40&fit=crop',
+      alt: 'American Express payment logo'
+    },
+    {
+      id: 'visa',
+      name: 'Visa',
+      logo: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=60&h=40&fit=crop',
+      alt: 'Visa payment card logo'
+    },
+    {
+      id: 'apple-pay',
+      name: 'Apple Pay',
+      logo: 'https://images.unsplash.com/photo-1611532736946-4e5dae86c6d8?w=60&h=40&fit=crop',
+      alt: 'Apple Pay digital payment logo'
+    },
+    {
+      id: 'samsung-pay',
+      name: 'Samsung Pay',
+      logo: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=60&h=40&fit=crop',
+      alt: 'Samsung Pay digital payment logo'
+    }
+  ];
+
   return (
     <section
-      className={`relative w-full overflow-hidden min-h-screen ${className}`}
-      style={{
-        background: 'linear-gradient(135deg, #4387C7 0%, #214261 100%)'
-      }}
-      aria-labelledby="hero-heading"
+      className={`relative w-full bg-[#EDEDED] overflow-hidden py-16 lg:py-24 ${className}`}
+      aria-labelledby="integrated-payment-heading"
     >
-      {/* Right half circle background */}
+      {/* Right gradient half circle - Background for device */}
       <div
-        className="absolute top-0 right-0 w-96 h-full opacity-20"
+        className="absolute top-0 right-0 w-96 h-full rounded-l-full"
         style={{
-          background: 'radial-gradient(circle at left center, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, transparent 70%)',
-          borderRadius: '50% 0 0 50%'
+          background: 'linear-gradient(to bottom, #54B1F2, #0D3259)'
         }}
         aria-hidden="true"
       />
 
-      <div className="relative w-full h-full">
-        {/* Device Mockup - Desktop positioned absolutely */}
-        <div
-          className="absolute z-10 hidden lg:block"
-          style={{ left: '453px', top: '312px' }}
-        >
-          <img
-            src="/lovable-uploads/cbd4e09c-f16f-4a62-8a2b-415b5cc9b864.png"
-            alt="R.Pay dashboard interface displayed on laptop and mobile devices showing analytics and payment management"
-            style={{ width: '1154.5px', height: '716px' }}
-            className="w-full h-auto object-contain"
-            loading="eager"
-            fetchPriority="high"
-          />
-        </div>
-
-        {/* Arabic Heading - حلول ذكية */}
-        <div
-          className="absolute z-10 hidden lg:block"
-          style={{ left: '193.25px', top: '450px' }}
-        >
-          <h1
-            className="text-white font-bold leading-tight"
-            style={{
-              direction: 'rtl',
-              fontSize: '65px',
-              width: '365.23px',
-              height: '79.56px',
-              fontFamily: 'DIN Next LT Arabic, Inter, sans-serif'
-            }}
-            id="hero-heading"
-          >
-            حلول ذكية
-          </h1>
-        </div>
-
-        {/* Arabic Subtitle - لمستقبل أفضل */}
-        <div
-          className="absolute z-10 hidden lg:block"
-          style={{ left: '51px', top: '534.23px' }}
-        >
-          <h2
-            className="text-white leading-tight"
-            style={{
-              direction: 'rtl',
-              fontSize: '65px',
-              width: '648.77px',
-              height: '80px',
-              fontFamily: 'DIN Next LT Arabic, Inter, sans-serif'
-            }}
-          >
-            لمستقبل أفضل
-          </h2>
-        </div>
-
-        {/* English Heading */}
-        <div
-          className="absolute z-10 hidden lg:block"
-          style={{ left: '128.66px', top: '618.44px' }}
-        >
-          <h3
-            className="text-white font-bold leading-tight"
-            style={{
-              fontSize: '65px',
-              width: '494.39px',
-              height: '79.56px',
-              fontFamily: 'Inter, sans-serif'
-            }}
-          >
-            Smart Solutions
-          </h3>
-        </div>
-
-        {/* R.Pay Logo in Blue Frame */}
-        <div
-          className="absolute z-10 hidden lg:block"
-          style={{ left: '218px', top: '722px' }}
-        >
-          <div className="bg-white p-4 rounded-lg shadow-lg" style={{ width: '332.26px', height: '150.72px' }}>
-            <img
-              src="/lovable-uploads/98afb416-bf26-43aa-87c9-a5336bb6f2bb.png"
-              alt="R.Pay company logo"
-              className="w-full h-full object-contain"
-              loading="lazy"
-            />
-          </div>
-        </div>
+      {/* Decorative WiFi Icons */}
+      <div className="absolute top-10 right-20 w-16 h-16 opacity-30 z-10">
+        <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-white">
+          <path d="M12 20h.01M8.5 16.5a5 5 0 017 0M5 13a10 10 0 0114 0M2 9.5a15.5 15.5 0 0120 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
       </div>
 
-      {/* Mobile responsive layout */}
-      <div className="block lg:hidden relative max-w-7xl mx-auto px-6 py-12">
-        <div className="space-y-8 relative z-10">
-          <header className="space-y-4 text-center">
-            <h1
-              className="text-white font-bold text-4xl"
-              style={{
-                direction: 'rtl',
-                fontFamily: 'DIN Next LT Arabic, Inter, sans-serif'
-              }}
-            >
-              حلول ذكية
-            </h1>
+      <div className="absolute top-32 right-32 w-12 h-12 opacity-20 z-10">
+        <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-white">
+          <path d="M12 20h.01M8.5 16.5a5 5 0 017 0M5 13a10 10 0 0114 0M2 9.5a15.5 15.5 0 0120 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content - Text */}
+          <div className="space-y-8 relative z-10">
+            {/* Arabic Heading */}
             <h2
-              className="text-white text-4xl"
+              className="text-foreground font-bold leading-tight"
               style={{
                 direction: 'rtl',
+                fontSize: 'clamp(24px, 5vw, 48px)',
+                fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
+                color: "#002741"
+              }}
+              id="integrated-payment-heading"
+            >
+              حلول ذكية            </h2>
+            <h2
+              className="text-foreground font-bold leading-tight"
+              style={{
+                direction: 'rtl',
+                fontSize: 'clamp(24px, 5vw, 48px)',
+                fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
+                color: "#002741"
+              }}
+              id="integrated-payment-heading"
+            >
+              حلول ذكية            </h2>
+
+            {/* Arabic Subheading */}
+            <h3
+              className="text-primary font-semibold leading-tight"
+              style={{
+                direction: 'rtl',
+                fontSize: 'clamp(16px, 3vw, 24px)',
                 fontFamily: 'DIN Next LT Arabic, Inter, sans-serif'
               }}
             >
-              لمستقبل أفضل
-            </h2>
-            <h3 className="text-white font-bold text-4xl">
-              Smart Solutions
+              كيف يعمل
             </h3>
-          </header>
 
-          <div className="bg-white p-4 rounded-lg shadow-lg mx-auto w-64">
-            <img
-              src="/lovable-uploads/98afb416-bf26-43aa-87c9-a5336bb6f2bb.png"
-              alt="R.Pay company logo"
-              className="w-full h-auto object-contain"
-              loading="lazy"
-            />
+            {/* Arabic Description */}
+            <p
+              className="text-foreground/80 leading-relaxed"
+              style={{
+                direction: 'rtl',
+                fontSize: 'clamp(14px, 2.5vw, 18px)',
+                fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
+                lineHeight: '1.6'
+              }}
+            >
+              وحدة دفع إلكترونية داخل كل جهاز تدعم البطاقات والمحافظ الرقمية غير
+              العمليات مباشرة في لوحة التحكم
+            </p>
+
+            {/* English Heading */}
+            <h4
+              className="text-foreground font-bold leading-tight mt-8"
+              style={{
+                fontSize: 'clamp(20px, 4vw, 36px)',
+                fontFamily: 'Inter, sans-serif'
+              }}
+            >
+              Integrated Smart Payment
+            </h4>
+
+            {/* How it works */}
+            <div className="space-y-4">
+              <h5
+                className="text-primary font-semibold"
+                style={{
+                  fontSize: 'clamp(14px, 2.5vw, 18px)',
+                  fontFamily: 'Inter, sans-serif'
+                }}
+              >
+                How it works
+              </h5>
+
+              <p
+                className="text-foreground/80 leading-relaxed"
+                style={{
+                  fontSize: 'clamp(13px, 2vw, 16px)',
+                  fontFamily: 'Inter, sans-serif',
+                  lineHeight: '1.6'
+                }}
+              >
+                Embedded electronic payment unit in every machine Supports cards and digital wallets with real-time dashboard integration
+              </p>
+            </div>
+
+            {/* Benefits */}
+            <div className="space-y-4">
+              <h5
+                className="text-primary font-semibold"
+                style={{
+                  fontSize: 'clamp(14px, 2.5vw, 18px)',
+                  fontFamily: 'Inter, sans-serif'
+                }}
+              >
+                Benefits
+              </h5>
+
+              <p
+                className="text-foreground/80 leading-relaxed"
+                style={{
+                  fontSize: 'clamp(13px, 2vw, 16px)',
+                  fontFamily: 'Inter, sans-serif',
+                  lineHeight: '1.6'
+                }}
+              >
+                Secure seamless payment, Less cash handling, and enhanced professionalism
+              </p>
+            </div>
+
+            {/* Payment Methods */}
+            <div className="space-y-4">
+              <h6
+                className="text-foreground font-medium"
+                style={{
+                  fontSize: 'clamp(12px, 2vw, 14px)',
+                  fontFamily: 'Inter, sans-serif'
+                }}
+              >
+                Supported Payment Methods
+              </h6>
+
+              <div className="flex flex-wrap items-center gap-4">
+                {paymentMethods.map((method) => (
+                  <div
+                    key={method.id}
+                    className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow duration-200"
+                  >
+                    <img
+                      src={method.logo}
+                      alt={method.alt}
+                      className="w-12 h-8 object-contain"
+                      loading="lazy"
+                    />
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
 
-          <img
-            src="/lovable-uploads/cbd4e09c-f16f-4a62-8a2b-415b5cc9b864.png"
-            alt="R.Pay dashboard interface"
-            className="w-full h-auto object-contain"
-            loading="lazy"
-          />
+          {/* Right Content - Device Image */}
+          <div className="relative z-20 flex justify-center lg:justify-end">
+            <div className="relative">
+              <img
+                src="/lovable-uploads/cbd4e09c-f16f-4a62-8a2b-415b5cc9b864.png"
+                alt="R.Pay integrated smart payment device showing Remote Pay interface with contactless payment capabilities"
+                className="w-[600px] h-[450px]  drop-shadow-4xl relative z-10"
+                loading="lazy"
+              />
+
+            </div>
+          </div>
         </div>
       </div>
-
-      {/* Spacing for absolute positioning */}
-      <div className="h-screen lg:h-[900px]" aria-hidden="true" />
     </section>
   );
 });

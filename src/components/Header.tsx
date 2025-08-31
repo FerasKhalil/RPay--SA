@@ -12,7 +12,16 @@ interface NavigationItem {
 interface HeaderProps {
   className?: string;
 }
+interface PaymentMethod {
+  id: string;
+  name: string;
+  logo: string;
+  alt: string;
+}
 
+interface HeroSectionProps {
+  className?: string;
+}
 const navigationItems: NavigationItem[] = [
   { id: 'home', labelAr: 'الرئيسية', labelEn: 'Home', href: '/', isActive: true },
   { id: 'about', labelAr: 'عن ار باي', labelEn: 'About R Pay', href: '/about' },
@@ -25,7 +34,7 @@ const navigationItems: NavigationItem[] = [
 const Header: React.FC<HeaderProps> = memo(({ className = "" }) => {
   return (
     <header
-      className={`w-full bg-[#EDEDED] relative pb-20 ${className}`}
+      className={`w-full bg-[#EDEDED] relative ${className}`}
       role="banner"
     >
       <nav
@@ -36,7 +45,7 @@ const Header: React.FC<HeaderProps> = memo(({ className = "" }) => {
         {/* Logo - Desktop positioned absolutely */}
         <div
           className="absolute z-10 hidden lg:block"
-          style={{ left: '32px', top: '133px' }}
+          style={{ left: '152px', top: '33px' }}
         >
           <img
             src="/lovable-uploads/f5776377-e440-44c1-ab5f-cb9635956f15.png"
@@ -50,7 +59,7 @@ const Header: React.FC<HeaderProps> = memo(({ className = "" }) => {
         {/* Navigation Menu - Desktop positioned absolutely */}
         <nav
           className="absolute z-10 hidden lg:flex items-center"
-          style={{ left: '145px', top: '145px', width: '1006px', height: '28.14px' }}
+          style={{ left: '300px', top: '43px', width: '1006px', height: '28.14px' }}
           aria-label="Primary navigation"
         >
           <ul className="flex items-center space-x-6 text-sm" role="menubar">
@@ -58,7 +67,7 @@ const Header: React.FC<HeaderProps> = memo(({ className = "" }) => {
               <li key={item.id} role="none">
                 <Button
                   variant={item.isActive ? "default" : "ghost"}
-                  className={`px-4 py-2 transition-colors duration-200 ${item.isActive
+                  className={`px-14 py-2 transition-colors duration-200 ${item.isActive
                     ? "text-white hover:bg-[#4386C6]/90"
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                     }`}

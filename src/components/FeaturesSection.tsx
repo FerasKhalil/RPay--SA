@@ -121,7 +121,7 @@ const FeaturesSection = () => {
             return (
               <div
                 key={feature.id}
-                className="group bg-white rounded-lg p-6 shadow-soft hover:shadow-medium transition-all duration-300 border border-border hover:border-primary/20 hover:scale-105"
+                className="group bg-white rounded-lg p-6 shadow-soft hover:shadow-medium transition-all duration-300 border border-border hover:border-primary/20 hover:scale-105 cursor-pointer"
               >
                 {/* Icon */}
                 <div className="mb-4">

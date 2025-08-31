@@ -6,7 +6,7 @@ interface MissionSectionProps {
 
 const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) => {
   return (
-    <section 
+    <section
       className={`relative w-full overflow-hidden ${className}`}
       style={{
         background: 'linear-gradient(to bottom, #4387C7, #214261)'
@@ -19,21 +19,25 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
           <div className="space-y-8 relative z-10">
             {/* Logo/Icon */}
             <div className="flex items-center space-x-4 mb-8" dir="rtl">
-              <span 
-                className="text-white text-xl font-medium"
-                style={{ fontFamily: 'DIN Next LT Arabic, Inter, sans-serif' }}
-              >
-                مهمتنا
-              </span>
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
                 <div className="w-8 h-8 bg-primary rounded-full" />
               </div>
+              <span
+                className="text-white text-xl font-medium pr-4"
+                style={{
+                  fontSize: 'clamp(32px, 5vw, 48px)',
+                  fontFamily: 'Inter, sans-serif'
+                }}
+              >
+                مهمتنا
+              </span>
+
             </div>
 
             {/* Arabic Text */}
-            <p 
+            <p
               className="text-white leading-relaxed"
-              style={{ 
+              style={{
                 direction: 'rtl',
                 fontSize: 'clamp(16px, 2.5vw, 18px)',
                 fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
@@ -45,9 +49,9 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
             </p>
 
             {/* English Heading */}
-            <h2 
+            <h2
               className="text-white font-bold leading-tight"
-              style={{ 
+              style={{
                 fontSize: 'clamp(32px, 5vw, 48px)',
                 fontFamily: 'Inter, sans-serif'
               }}
@@ -55,11 +59,11 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
             >
               Our Mission
             </h2>
-            
+
             {/* English Description */}
-            <p 
+            <p
               className="text-white/90 leading-relaxed"
-              style={{ 
+              style={{
                 fontSize: 'clamp(16px, 2.5vw, 18px)',
                 fontFamily: 'Inter, sans-serif',
                 lineHeight: '1.6'
@@ -70,11 +74,11 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
           </div>
 
           {/* Right Content - Image */}
-          <div className="relative z-10">
-            <img 
+          <div className="relative z-10 -mb-20">
+            <img
               src="/lovable-uploads/7d76c3b9-ef60-4f7a-a76e-e4e99161aaf7.png"
               alt="Saudi professional demonstrating R.Pay tablet interface for smart payment solutions"
-              className="w-full h-auto object-contain"
+              className="w-full h-[550px]"
               loading="lazy"
             />
           </div>
