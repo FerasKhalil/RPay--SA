@@ -55,7 +55,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
 
   return (
     <section 
-      className={`relative w-full bg-gradient-to-br from-blue-50 to-blue-100 overflow-hidden py-16 lg:py-24 ${className}`}
+      className={`relative w-full bg-[#EDEDED] overflow-hidden py-16 lg:py-24 ${className}`}
       aria-labelledby="integrated-payment-heading"
     >
       {/* Decorative WiFi Icons */}
