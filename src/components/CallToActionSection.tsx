@@ -27,54 +27,62 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({
       
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content - Professional Image */}
+          {/* Left Content - Professional with Device */}
           <div className="relative z-10 order-2 lg:order-1">
-            <div className="relative">
+            <div className="relative flex items-center space-x-6">
+              {/* Professional Image */}
               <img 
-                src="/lovable-uploads/7fafbc66-8a75-4fb9-b90a-33d4dd14078e.png"
-                alt="Professional Saudi businessman working with R.Pay system at modern office desk with laptop and payment device"
-                className="w-full h-auto object-contain"
+                src="/lovable-uploads/677ff2de-90b4-49b9-8cb1-ee4a173421c8.png"
+                alt="Professional Saudi businessman working with laptop for R.Pay smart payment solutions"
+                className="w-auto h-auto object-contain"
                 loading="lazy"
               />
               
-              {/* Subtle glow effect */}
-              <div 
-                className="absolute inset-0 -z-10 bg-gradient-to-br from-white/10 to-transparent rounded-3xl blur-2xl"
-                aria-hidden="true"
+              {/* R.Pay Device */}
+              <img 
+                src="/lovable-uploads/1d5e5fc0-e557-4b4e-86a3-3df569b2f051.png"
+                alt="R.Pay payment device with Remote Pay interface"
+                className="w-24 h-auto object-contain"
+                loading="lazy"
               />
             </div>
           </div>
 
-          {/* Right Content - Call to Action */}
+          {/* Right Content - Call to Action with Bubble */}
           <div className="space-y-8 relative z-10 order-1 lg:order-2">
-            {/* Arabic Heading */}
-            <h2 
-              className="text-white font-bold leading-tight"
-              style={{ 
-                direction: 'rtl',
-                fontSize: 'clamp(24px, 5vw, 48px)',
-                fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
-                lineHeight: '1.2'
-              }}
-              id="cta-heading"
-            >
-              انضم إلينا وابدأ البيع الذاتي الآن بكل سهولة
-            </h2>
+            {/* Main CTA Bubble */}
+            <div className="relative">
+              <div className="bg-gray-800/90 rounded-3xl p-8 backdrop-blur-sm">
+                {/* Arabic Heading */}
+                <h2 
+                  className="text-white font-bold leading-tight mb-4"
+                  style={{ 
+                    direction: 'rtl',
+                    fontSize: 'clamp(18px, 4vw, 32px)',
+                    fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
+                    lineHeight: '1.2'
+                  }}
+                  id="cta-heading"
+                >
+                  انضم إلينا وابدأ البيع الذاتي الآن بكل سهولة
+                </h2>
 
-            {/* English Heading */}
-            <h3 
-              className="text-white/90 font-semibold leading-tight"
-              style={{ 
-                fontSize: 'clamp(18px, 4vw, 32px)',
-                fontFamily: 'Inter, sans-serif',
-                lineHeight: '1.3'
-              }}
-            >
-              Join us and start self-selling with ease now
-            </h3>
+                {/* English Heading */}
+                <h3 
+                  className="text-white/90 font-semibold leading-tight"
+                  style={{ 
+                    fontSize: 'clamp(16px, 3vw, 24px)',
+                    fontFamily: 'Inter, sans-serif',
+                    lineHeight: '1.3'
+                  }}
+                >
+                  Join us and start self-selling with ease now
+                </h3>
+              </div>
+            </div>
 
             {/* WhatsApp CTA Button */}
-            <div className="mt-12">
+            <div className="mt-8">
               <button
                 onClick={handleWhatsAppClick}
                 className="group inline-flex items-center space-x-4 bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-4 rounded-2xl transition-all duration-300 transform hover:scale-105 hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-green-300"
@@ -104,46 +112,22 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({
                     className="text-xs opacity-90"
                     style={{ fontFamily: 'Inter, sans-serif' }}
                   >
-                    {whatsappNumber}
+                    Grab your Quote Now
                   </span>
                 </div>
 
                 {/* Hand Cursor Icon */}
                 <div className="text-white/80 group-hover:text-white transition-colors">
                   <svg 
-                    className="w-5 h-5" 
+                    className="w-6 h-6" 
                     fill="currentColor" 
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                   >
-                    <path d="M10.5 15L15.5 10l-5-5v10z"/>
-                    <path d="M12 2L2 7v10c0 5.55 3.84 10 9 10s9-4.45 9-10V7l-8-5z" opacity="0.3"/>
+                    <path d="M13.025 1l-2.847 2.828 6.176 6.176h-16.354v3.992h16.354l-6.176 6.176 2.847 2.828 10.975-11z"/>
                   </svg>
                 </div>
               </button>
-            </div>
-
-            {/* Additional Contact Info */}
-            <div className="mt-8 space-y-2">
-              <p 
-                className="text-white/80 text-sm"
-                style={{ 
-                  fontSize: 'clamp(12px, 2vw, 14px)',
-                  fontFamily: 'Inter, sans-serif'
-                }}
-              >
-                Ready to transform your business with smart payment solutions?
-              </p>
-              <p 
-                className="text-white/70 text-xs"
-                style={{ 
-                  direction: 'rtl',
-                  fontSize: 'clamp(11px, 1.5vw, 13px)',
-                  fontFamily: 'DIN Next LT Arabic, Inter, sans-serif'
-                }}
-              >
-                فريقنا جاهز لمساعدتك في بدء رحلتك مع أحدث تقنيات الدفع
-              </p>
             </div>
           </div>
         </div>
