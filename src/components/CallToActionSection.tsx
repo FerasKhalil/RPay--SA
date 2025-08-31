@@ -32,18 +32,18 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({
             <div className="relative">
               {/* Main Professional Image */}
               <img 
-                src="/lovable-uploads/1e4e0acb-6b85-4329-915f-30c856468ad7.png"
-                alt="Professional Saudi businessman working with laptop and R.Pay payment device"
+                src="/lovable-uploads/e56e07ba-f2ae-4c18-8a72-a8c40c6b8c0b.png"
+                alt="Professional Saudi businessman working with laptop for R.Pay smart payment solutions"
                 className="w-full h-auto object-contain"
                 loading="lazy"
               />
               
-              {/* R.Pay Device Positioned Over Hand */}
-              <div className="absolute bottom-16 right-32 z-20">
+              {/* R.Pay Device Positioned Near Hand */}
+              <div className="absolute bottom-20 right-20 z-20">
                 <img 
                   src="/lovable-uploads/1d5e5fc0-e557-4b4e-86a3-3df569b2f051.png"
                   alt="R.Pay payment device"
-                  className="w-20 h-auto object-contain"
+                  className="w-16 h-auto object-contain"
                   loading="lazy"
                 />
               </div>
