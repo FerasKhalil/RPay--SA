@@ -65,7 +65,7 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
     <footer 
       className={`w-full text-white py-8 ${className}`}
       style={{ 
-        background: 'linear-gradient(to right, #3289B4, #194874)' 
+        background: 'linear-gradient(to right, #194874, #3289B4)' 
       }}
       role="contentinfo"
     >
