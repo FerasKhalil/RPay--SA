@@ -59,7 +59,10 @@ const LogosSection: React.FC<LogosSectionProps> = memo(({ className = "" }) => {
 
   return (
     <section 
-      className={`w-full bg-[#FFFFFF] py-16 overflow-hidden ${className}`}
+      className={`w-full py-16 overflow-hidden ${className}`}
+      style={{
+        background: 'linear-gradient(to bottom, #4387C7, #214261)'
+      }}
       aria-label="Our trusted partners"
     >
       <div className="relative w-full">
