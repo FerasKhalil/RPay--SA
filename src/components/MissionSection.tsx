@@ -1,16 +1,30 @@
-const MissionSection = () => {
+import { memo } from "react";
+
+interface MissionSectionProps {
+  className?: string;
+}
+
+const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) => {
   return (
-    <section className="relative w-full bg-primary overflow-hidden">
+    <section 
+      className={`relative w-full bg-primary overflow-hidden ${className}`}
+      aria-labelledby="mission-heading"
+    >
       <div className="relative max-w-7xl mx-auto px-6 py-12 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content - Text */}
           <div className="space-y-8 relative z-10">
             {/* Logo/Icon */}
-            <div className="flex items-center space-x-4 mb-8">
+            <div className="flex items-center space-x-4 mb-8" dir="rtl">
+              <span 
+                className="text-white text-xl font-medium"
+                style={{ fontFamily: 'DIN Next LT Arabic, Inter, sans-serif' }}
+              >
+                مهمتنا
+              </span>
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-                <div className="w-8 h-8 bg-primary rounded-full"></div>
+                <div className="w-8 h-8 bg-primary rounded-full" />
               </div>
-              <span className="text-white text-xl font-medium">مهمتنا</span>
             </div>
 
             {/* Arabic Text */}
@@ -18,7 +32,7 @@ const MissionSection = () => {
               className="text-white leading-relaxed"
               style={{ 
                 direction: 'rtl',
-                fontSize: '18px',
+                fontSize: 'clamp(16px, 2.5vw, 18px)',
                 fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
                 lineHeight: '1.6'
               }}
@@ -31,9 +45,10 @@ const MissionSection = () => {
             <h2 
               className="text-white font-bold leading-tight"
               style={{ 
-                fontSize: '48px',
+                fontSize: 'clamp(32px, 5vw, 48px)',
                 fontFamily: 'Inter, sans-serif'
               }}
+              id="mission-heading"
             >
               Our Mission
             </h2>
@@ -42,7 +57,7 @@ const MissionSection = () => {
             <p 
               className="text-white/90 leading-relaxed"
               style={{ 
-                fontSize: '18px',
+                fontSize: 'clamp(16px, 2.5vw, 18px)',
                 fontFamily: 'Inter, sans-serif',
                 lineHeight: '1.6'
               }}
@@ -55,14 +70,17 @@ const MissionSection = () => {
           <div className="relative z-10">
             <img 
               src="/lovable-uploads/58dbf48f-731c-4576-92c4-770c18ae4261.png"
-              alt="Saudi professional with R.Pay tablet"
+              alt="Saudi professional demonstrating R.Pay tablet interface for smart payment solutions"
               className="w-full h-auto object-contain"
+              loading="lazy"
             />
           </div>
         </div>
       </div>
     </section>
   );
-};
+});
+
+MissionSection.displayName = 'MissionSection';
 
 export default MissionSection;

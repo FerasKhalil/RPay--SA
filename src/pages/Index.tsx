@@ -4,8 +4,9 @@ import LogosSection from "@/components/LogosSection";
 import AboutSection from "@/components/AboutSection";
 import MissionSection from "@/components/MissionSection";
 import FeaturesSection from "@/components/FeaturesSection";
+import IntegratedSystemSection from "@/components/IntegratedSystemSection";
 
-const Index = () => {
+const Index: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Header />
@@ -14,6 +15,7 @@ const Index = () => {
       <AboutSection />
       <MissionSection />
       <FeaturesSection />
+      <IntegratedSystemSection />
     </div>
   );
 };
