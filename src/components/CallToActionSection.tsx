@@ -27,24 +27,26 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({
       
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content - Professional with Device */}
+          {/* Left Content - Professional with Device Overlay */}
           <div className="relative z-10 order-2 lg:order-1">
-            <div className="relative flex items-center space-x-6">
-              {/* Professional Image */}
+            <div className="relative">
+              {/* Main Professional Image */}
               <img 
-                src="/lovable-uploads/677ff2de-90b4-49b9-8cb1-ee4a173421c8.png"
-                alt="Professional Saudi businessman working with laptop for R.Pay smart payment solutions"
-                className="w-auto h-auto object-contain"
+                src="/lovable-uploads/1e4e0acb-6b85-4329-915f-30c856468ad7.png"
+                alt="Professional Saudi businessman working with laptop and R.Pay payment device"
+                className="w-full h-auto object-contain"
                 loading="lazy"
               />
               
-              {/* R.Pay Device */}
-              <img 
-                src="/lovable-uploads/1d5e5fc0-e557-4b4e-86a3-3df569b2f051.png"
-                alt="R.Pay payment device with Remote Pay interface"
-                className="w-24 h-auto object-contain"
-                loading="lazy"
-              />
+              {/* R.Pay Device Positioned Over Hand */}
+              <div className="absolute bottom-16 right-32 z-20">
+                <img 
+                  src="/lovable-uploads/1d5e5fc0-e557-4b4e-86a3-3df569b2f051.png"
+                  alt="R.Pay payment device"
+                  className="w-20 h-auto object-contain"
+                  loading="lazy"
+                />
+              </div>
             </div>
           </div>
 
@@ -52,7 +54,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({
           <div className="space-y-8 relative z-10 order-1 lg:order-2">
             {/* Main CTA Bubble */}
             <div className="relative">
-              <div className="bg-gray-800/90 rounded-3xl p-8 backdrop-blur-sm">
+              <div className="bg-gray-900/95 rounded-3xl p-8 backdrop-blur-sm">
                 {/* Arabic Heading */}
                 <h2 
                   className="text-white font-bold leading-tight mb-4"
@@ -106,13 +108,13 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({
                     className="text-sm font-medium"
                     style={{ fontFamily: 'DIN Next LT Arabic, Inter, sans-serif' }}
                   >
-                    تواصل معنا عبر واتساب
+                    احصل على عرض سعرك الآن
                   </span>
                   <span 
                     className="text-xs opacity-90"
                     style={{ fontFamily: 'Inter, sans-serif' }}
                   >
-                    Grab your Quote Now
+                    Grab Your Quote Now
                   </span>
                 </div>
 
