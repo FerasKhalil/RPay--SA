@@ -50,7 +50,7 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({
     <section 
       className={`relative w-full overflow-hidden py-16 lg:py-24 ${className}`}
       style={{
-        background: 'linear-gradient(to bottom, #43B7C7, #214261)'
+        background: 'linear-gradient(to bottom, #4387C7, #214261)'
       }}
       aria-labelledby="devices-heading"
     >
