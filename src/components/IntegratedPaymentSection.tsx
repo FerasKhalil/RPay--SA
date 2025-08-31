@@ -11,8 +11,8 @@ interface IntegratedPaymentSectionProps {
   className?: string;
 }
 
-const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo(({ 
-  className = "" 
+const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo(({
+  className = ""
 }) => {
   const paymentMethods: PaymentMethod[] = [
     {
@@ -54,40 +54,40 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
   ];
 
   return (
-    <section 
+    <section
       className={`relative w-full bg-[#EDEDED] overflow-hidden py-16 lg:py-24 ${className}`}
       aria-labelledby="integrated-payment-heading"
     >
       {/* Right gradient half circle - Background for device */}
-      <div 
+      <div
         className="absolute top-0 right-0 w-96 h-full rounded-l-full"
         style={{
           background: 'linear-gradient(to bottom, #54B1F2, #0D3259)'
         }}
-        aria-hidden="true" 
+        aria-hidden="true"
       />
 
       {/* Decorative WiFi Icons */}
       <div className="absolute top-10 right-20 w-16 h-16 opacity-30 z-10">
         <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-white">
-          <path d="M12 20h.01M8.5 16.5a5 5 0 017 0M5 13a10 10 0 0114 0M2 9.5a15.5 15.5 0 0120 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 20h.01M8.5 16.5a5 5 0 017 0M5 13a10 10 0 0114 0M2 9.5a15.5 15.5 0 0120 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
-      
+
       <div className="absolute top-32 right-32 w-12 h-12 opacity-20 z-10">
         <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-white">
-          <path d="M12 20h.01M8.5 16.5a5 5 0 017 0M5 13a10 10 0 0114 0M2 9.5a15.5 15.5 0 0120 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M12 20h.01M8.5 16.5a5 5 0 017 0M5 13a10 10 0 0114 0M2 9.5a15.5 15.5 0 0120 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
-      
+
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content - Text */}
           <div className="space-y-8 relative z-10">
             {/* Arabic Heading */}
-            <h2 
+            <h2
               className="text-foreground font-bold leading-tight"
-              style={{ 
+              style={{
                 direction: 'rtl',
                 fontSize: 'clamp(24px, 5vw, 48px)',
                 fontFamily: 'DIN Next LT Arabic, Inter, sans-serif'
@@ -98,9 +98,9 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
             </h2>
 
             {/* Arabic Subheading */}
-            <h3 
+            <h3
               className="text-primary font-semibold leading-tight"
-              style={{ 
+              style={{
                 direction: 'rtl',
                 fontSize: 'clamp(16px, 3vw, 24px)',
                 fontFamily: 'DIN Next LT Arabic, Inter, sans-serif'
@@ -110,9 +110,9 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
             </h3>
 
             {/* Arabic Description */}
-            <p 
+            <p
               className="text-foreground/80 leading-relaxed"
-              style={{ 
+              style={{
                 direction: 'rtl',
                 fontSize: 'clamp(14px, 2.5vw, 18px)',
                 fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
@@ -124,9 +124,9 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
             </p>
 
             {/* English Heading */}
-            <h4 
+            <h4
               className="text-foreground font-bold leading-tight mt-8"
-              style={{ 
+              style={{
                 fontSize: 'clamp(20px, 4vw, 36px)',
                 fontFamily: 'Inter, sans-serif'
               }}
@@ -136,19 +136,19 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
 
             {/* How it works */}
             <div className="space-y-4">
-              <h5 
+              <h5
                 className="text-primary font-semibold"
-                style={{ 
+                style={{
                   fontSize: 'clamp(14px, 2.5vw, 18px)',
                   fontFamily: 'Inter, sans-serif'
                 }}
               >
                 How it works
               </h5>
-              
-              <p 
+
+              <p
                 className="text-foreground/80 leading-relaxed"
-                style={{ 
+                style={{
                   fontSize: 'clamp(13px, 2vw, 16px)',
                   fontFamily: 'Inter, sans-serif',
                   lineHeight: '1.6'
@@ -160,19 +160,19 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
 
             {/* Benefits */}
             <div className="space-y-4">
-              <h5 
+              <h5
                 className="text-primary font-semibold"
-                style={{ 
+                style={{
                   fontSize: 'clamp(14px, 2.5vw, 18px)',
                   fontFamily: 'Inter, sans-serif'
                 }}
               >
                 Benefits
               </h5>
-              
-              <p 
+
+              <p
                 className="text-foreground/80 leading-relaxed"
-                style={{ 
+                style={{
                   fontSize: 'clamp(13px, 2vw, 16px)',
                   fontFamily: 'Inter, sans-serif',
                   lineHeight: '1.6'
@@ -184,23 +184,23 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
 
             {/* Payment Methods */}
             <div className="space-y-4">
-              <h6 
+              <h6
                 className="text-foreground font-medium"
-                style={{ 
+                style={{
                   fontSize: 'clamp(12px, 2vw, 14px)',
                   fontFamily: 'Inter, sans-serif'
                 }}
               >
                 Supported Payment Methods
               </h6>
-              
+
               <div className="flex flex-wrap items-center gap-4">
                 {paymentMethods.map((method) => (
                   <div
                     key={method.id}
                     className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow duration-200"
                   >
-                    <img 
+                    <img
                       src={method.logo}
                       alt={method.alt}
                       className="w-12 h-8 object-contain"
@@ -215,8 +215,8 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
           {/* Right Content - Device Image */}
           <div className="relative z-20 flex justify-center lg:justify-end">
             <div className="relative">
-              <img 
-                src="/lovable-uploads/31323af2-989d-42d4-a083-de0c52cde38b.png"
+              <img
+                src="/lovable-uploads/mobile-left.png"
                 alt="R.Pay integrated smart payment device showing Remote Pay interface with contactless payment capabilities"
                 className="w-full max-w-md h-auto object-contain drop-shadow-2xl relative z-10"
                 loading="lazy"

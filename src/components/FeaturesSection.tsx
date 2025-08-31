@@ -1,16 +1,16 @@
-import { 
-  CreditCard, 
-  Gamepad2, 
-  RefreshCw, 
-  Cog, 
-  MapPin, 
-  Package, 
-  Tags, 
-  BarChart3, 
-  Monitor, 
-  Users, 
+import {
+  CreditCard,
+  Gamepad2,
+  RefreshCw,
+  Cog,
+  MapPin,
+  Package,
+  Tags,
+  BarChart3,
+  Monitor,
+  Users,
   Plus,
-  Smartphone 
+  Smartphone
 } from 'lucide-react';
 
 interface Feature {
@@ -101,9 +101,9 @@ const FeaturesSection = () => {
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 
+          <h2
             className="text-primary font-bold mb-4"
-            style={{ 
+            style={{
               fontSize: '48px',
               fontFamily: 'DIN Next LT Arabic, Inter, sans-serif'
             }}
@@ -131,9 +131,9 @@ const FeaturesSection = () => {
                 </div>
 
                 {/* Arabic Title */}
-                <h3 
+                <h3
                   className="text-foreground font-semibold mb-2 leading-tight"
-                  style={{ 
+                  style={{
                     direction: 'rtl',
                     fontSize: '16px',
                     fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
@@ -144,9 +144,9 @@ const FeaturesSection = () => {
                 </h3>
 
                 {/* English Title */}
-                <p 
+                <p
                   className="text-muted-foreground text-sm leading-relaxed"
-                  style={{ 
+                  style={{
                     fontFamily: 'Inter, sans-serif',
                     minHeight: '40px'
                   }}
