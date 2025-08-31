@@ -60,9 +60,10 @@ const Header: React.FC<HeaderProps> = memo(({ className = "" }) => {
                   variant={item.isActive ? "default" : "ghost"}
                   className={`px-4 py-2 transition-colors duration-200 ${
                     item.isActive 
-                      ? "text-primary-foreground bg-primary/10 hover:bg-primary/20" 
+                      ? "text-white hover:bg-[#4386C6]/90" 
                       : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                   }`}
+                  style={item.isActive ? { backgroundColor: '#4386C6' } : {}}
                   asChild
                   role="menuitem"
                 >
