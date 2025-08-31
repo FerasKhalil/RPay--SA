@@ -8,6 +8,7 @@ import IntegratedSystemSection from "@/components/IntegratedSystemSection";
 import StatisticsSection from "@/components/StatisticsSection";
 import DevicesSection from "@/components/DevicesSection";
 import IntegratedPaymentSection from "@/components/IntegratedPaymentSection";
+import CallToActionSection from "@/components/CallToActionSection";
 
 const Index: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const Index: React.FC = () => {
       <StatisticsSection />
       <DevicesSection />
       <IntegratedPaymentSection />
+      <CallToActionSection />
     </div>
   );
 };
