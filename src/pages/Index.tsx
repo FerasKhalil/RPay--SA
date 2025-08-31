@@ -5,6 +5,7 @@ import AboutSection from "@/components/AboutSection";
 import MissionSection from "@/components/MissionSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import IntegratedSystemSection from "@/components/IntegratedSystemSection";
+import StatisticsSection from "@/components/StatisticsSection";
 
 const Index: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Index: React.FC = () => {
       <MissionSection />
       <FeaturesSection />
       <IntegratedSystemSection />
+      <StatisticsSection />
     </div>
   );
 };
