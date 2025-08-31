@@ -13,6 +13,15 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
       }}
       aria-labelledby="hero-heading"
     >
+      {/* Right half circle background */}
+      <div 
+        className="absolute top-0 right-0 w-96 h-full opacity-20"
+        style={{
+          background: 'radial-gradient(circle at left center, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 50%, transparent 70%)',
+          borderRadius: '50% 0 0 50%'
+        }}
+        aria-hidden="true"
+      />
       
       <div className="relative w-full h-full">
         {/* Device Mockup - Desktop positioned absolutely */}
@@ -21,7 +30,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
           style={{ left: '453px', top: '312px' }}
         >
           <img 
-            src="/lovable-uploads/ba46e715-85a6-4b8c-b71c-485d882f82de.png"
+            src="/lovable-uploads/cbd4e09c-f16f-4a62-8a2b-415b5cc9b864.png"
             alt="R.Pay dashboard interface displayed on laptop and mobile devices showing analytics and payment management"
             style={{ width: '1154.5px', height: '716px' }}
             className="w-full h-auto object-contain"
@@ -140,7 +149,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
           </div>
           
           <img 
-            src="/lovable-uploads/ba46e715-85a6-4b8c-b71c-485d882f82de.png"
+            src="/lovable-uploads/cbd4e09c-f16f-4a62-8a2b-415b5cc9b864.png"
             alt="R.Pay dashboard interface"
             className="w-full h-auto object-contain"
             loading="lazy"
