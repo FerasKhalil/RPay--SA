@@ -13,44 +13,39 @@ interface PartnerLogo {
 const LogosSection: React.FC<LogosSectionProps> = memo(({ className = "" }) => {
   const partnerLogos: PartnerLogo[] = [
     { 
-      name: "Samsung", 
-      url: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=120&h=60&fit=crop",
-      alt: "Samsung - Technology partner"
+      name: "Beka", 
+      url: "/lovable-uploads/ecfd9f93-3b9d-45b2-9d49-bf56870f5e1c.png",
+      alt: "Beka - Technology partner"
     },
     { 
-      name: "Beko", 
-      url: "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=120&h=60&fit=crop",
-      alt: "Beko - Appliance partner"
-    },
-    { 
-      name: "Toshiba", 
-      url: "https://images.unsplash.com/photo-1518717758536-85ae29035b6d?w=120&h=60&fit=crop",
-      alt: "Toshiba - Technology solutions partner"
-    },
-    { 
-      name: "Apple", 
-      url: "https://images.unsplash.com/photo-1611532736946-4e5dae86c6d8?w=120&h=60&fit=crop",
-      alt: "Apple - Innovation partner"
-    },
-    { 
-      name: "Microsoft", 
-      url: "https://images.unsplash.com/photo-1633419461186-7d40a38105ec?w=120&h=60&fit=crop",
-      alt: "Microsoft - Software solutions partner"
+      name: "BlvdCity", 
+      url: "/lovable-uploads/41b38bae-5bc8-47af-ab6a-de13b7bd7ece.png",
+      alt: "BlvdCity - Strategic partner"
     },
     { 
       name: "Kinan", 
-      url: "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?w=120&h=60&fit=crop",
+      url: "/lovable-uploads/a2223f5f-cbe1-448a-901b-347a312bad21.png",
       alt: "Kinan - Business partner"
     },
     { 
+      name: "BlvdWorld", 
+      url: "/lovable-uploads/24afde7f-c420-4988-a527-eec640ab9ae0.png",
+      alt: "BlvdWorld - Innovation partner"
+    },
+    { 
+      name: "Rozana", 
+      url: "/lovable-uploads/bb5315a7-4bfc-4709-9a98-e83ccd80450f.png",
+      alt: "Rozana - Cultural partner"
+    },
+    { 
       name: "LuLu", 
-      url: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=120&h=60&fit=crop",
+      url: "/lovable-uploads/9692ff63-9b6c-42d2-9694-419455a12cbf.png",
       alt: "LuLu - Retail partner"
     },
     { 
-      name: "Blueicity", 
-      url: "https://images.unsplash.com/photo-1614680376739-414d95ff43df?w=120&h=60&fit=crop",
-      alt: "Blueicity - Strategic partner"
+      name: "Zaha", 
+      url: "/lovable-uploads/db128ec3-1a8c-469f-925a-09a31829f263.png",
+      alt: "Zaha - Development partner"
     }
   ];
 
@@ -70,7 +65,7 @@ const LogosSection: React.FC<LogosSectionProps> = memo(({ className = "" }) => {
                 <img 
                   src={logo.url}
                   alt={logo.alt}
-                  className="h-12 w-24 object-contain grayscale opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
                   loading="lazy"
                 />
               </div>
