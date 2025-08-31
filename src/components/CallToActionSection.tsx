@@ -16,11 +16,14 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({
 
   return (
     <section 
-      className={`relative w-full bg-primary overflow-hidden py-16 lg:py-24 ${className}`}
+      className={`relative w-full overflow-hidden py-16 lg:py-24 ${className}`}
+      style={{ 
+        background: 'linear-gradient(to right, #43B7C7, #214261)' 
+      }}
       aria-labelledby="cta-heading"
     >
       {/* Background Decorative Elements */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary to-blue-600" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-r from-white/5 to-transparent" aria-hidden="true" />
       
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
