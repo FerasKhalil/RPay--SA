@@ -5,16 +5,16 @@ const AboutSection = () => {
       <div className="absolute top-0 left-0 w-80 h-full left-gradient-circle rounded-r-full"></div>
       
       <div className="relative w-full h-full">
-        {/* Left Content - Image */}
+        {/* Left Content - Mobile Device Image */}
         <div 
           className="absolute z-10 hidden lg:block"
           style={{ left: '0px', top: '1420px' }}
         >
           <img 
-            src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=652&h=607&fit=crop"
+            src="/lovable-uploads/190c29e5-acb1-4e68-9ede-a9b168e36562.png"
             alt="R.Pay Mobile App Preview"
             style={{ width: '652.24px', height: '607px' }}
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-contain"
           />
         </div>
 
@@ -49,7 +49,7 @@ const AboutSection = () => {
               fontSize: '24.63px',
               fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
               lineHeight: '1.6',
-              maxWidth: '600px'
+              maxWidth: '950px'
             }}
           >
             ار باي هي شركة سعودية تقدّم حلولًا تقنية ذكية لقطاع الأجهزة والخدمات الذاتية، تتيح للمشغلين التحكم الكامل ومتابعة عملياتهم في الوقت الفعلي من خلال نظام موحد يجمع الدفع الإلكتروني والمراقبة التشغيلية. نهدف إلى دعم نمو الأعمال بكفاءة ومرونة
@@ -85,7 +85,7 @@ const AboutSection = () => {
               fontSize: '24.63px',
               fontFamily: 'Inter, sans-serif',
               lineHeight: '1.6',
-              maxWidth: '600px'
+              maxWidth: '950px'
             }}
           >
             R Pay is a Saudi company offering smart tech solutions for the self-service and device sector. Our unified system enables operators to manage and monitor their operations in real time, integrating e-payment and operational control. We aim to support business growth with efficiency and flexibility
@@ -97,9 +97,9 @@ const AboutSection = () => {
       <div className="block lg:hidden relative max-w-7xl mx-auto px-6 py-12 mt-8">
         <div className="space-y-8 relative z-10">
           <img 
-            src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=500&fit=crop"
+            src="/lovable-uploads/190c29e5-acb1-4e68-9ede-a9b168e36562.png"
             alt="R.Pay Mobile App Preview"
-            className="w-full h-auto object-cover rounded-lg shadow-lg"
+            className="w-full h-auto object-contain"
           />
           <div className="space-y-6">
             <h2 className="text-brand-dark font-bold text-4xl" style={{ direction: 'rtl', fontFamily: 'DIN Next LT Arabic, Inter, sans-serif' }}>
@@ -117,7 +117,7 @@ const AboutSection = () => {
       </div>
 
       {/* Extra spacing for absolute positioning */}
-      <div className="h-screen lg:h-[120vh]"></div>
+      <div className="h-screen lg:h-[140vh]"></div>
     </section>
   );
 };
