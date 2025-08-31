@@ -2,22 +2,25 @@ import { Button } from "@/components/ui/button";
 
 const Header = () => {
   return (
-    <header className="w-full px-6 py-4 bg-[#EDEDED]">
-      <nav className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Logo */}
-        <div className="flex items-center">
+    <header className="w-full bg-[#EDEDED] relative">
+      <nav className="relative w-full h-full">
+        {/* Logo - Positioned absolutely */}
+        <div 
+          className="absolute z-10"
+          style={{ left: '32px', top: '133px' }}
+        >
           <img 
-            src="https://via.placeholder.com/113x51/54B1F2/FFFFFF?text=R.Pay"
+            src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=113&h=51&fit=crop"
             alt="R.Pay Logo"
             style={{ width: '113px', height: '51.26px' }}
-            className="object-contain"
+            className="object-cover rounded"
           />
         </div>
 
-        {/* Navigation Menu */}
+        {/* Navigation Menu - Positioned absolutely */}
         <div 
-          className="hidden md:flex items-center justify-center"
-          style={{ width: '1006px', height: '28.14px' }}
+          className="absolute z-10 hidden lg:flex items-center justify-center"
+          style={{ left: '145px', top: '145px', width: '1006px', height: '28.14px' }}
         >
           <div className="flex items-center space-x-8">
             <Button variant="ghost" className="text-primary font-medium bg-primary/10 hover:bg-primary/20">
@@ -41,12 +44,24 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu Button */}
-        <Button variant="outline" className="md:hidden">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </Button>
+        {/* Mobile responsive layout */}
+        <div className="block lg:hidden max-w-7xl mx-auto px-6 py-4">
+          <div className="flex items-center justify-between">
+            <img 
+              src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=113&h=51&fit=crop"
+              alt="R.Pay Logo"
+              className="w-20 h-auto object-cover rounded"
+            />
+            <Button variant="outline">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </Button>
+          </div>
+        </div>
+
+        {/* Spacing for absolute positioning */}
+        <div className="h-48 lg:h-64"></div>
       </nav>
     </header>
   );
