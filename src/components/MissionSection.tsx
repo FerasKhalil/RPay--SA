@@ -7,7 +7,10 @@ interface MissionSectionProps {
 const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) => {
   return (
     <section 
-      className={`relative w-full bg-primary overflow-hidden ${className}`}
+      className={`relative w-full overflow-hidden ${className}`}
+      style={{
+        background: 'linear-gradient(to bottom, #4387C7, #214261)'
+      }}
       aria-labelledby="mission-heading"
     >
       <div className="relative max-w-7xl mx-auto px-6 py-12 lg:py-20">
@@ -69,7 +72,7 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
           {/* Right Content - Image */}
           <div className="relative z-10">
             <img 
-              src="/lovable-uploads/58dbf48f-731c-4576-92c4-770c18ae4261.png"
+              src="/lovable-uploads/7d76c3b9-ef60-4f7a-a76e-e4e99161aaf7.png"
               alt="Saudi professional demonstrating R.Pay tablet interface for smart payment solutions"
               className="w-full h-auto object-contain"
               loading="lazy"
