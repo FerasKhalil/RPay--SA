@@ -63,7 +63,10 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
 
   return (
     <footer 
-      className={`w-full bg-primary text-white py-8 ${className}`}
+      className={`w-full text-white py-8 ${className}`}
+      style={{ 
+        background: 'linear-gradient(to right, #3289B4, #194874)' 
+      }}
       role="contentinfo"
     >
       <div className="max-w-7xl mx-auto px-6">
