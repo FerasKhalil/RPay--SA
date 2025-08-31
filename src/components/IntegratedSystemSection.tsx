@@ -7,12 +7,15 @@ const IntegratedSystemSection: React.FC<IntegratedSystemSectionProps> = ({
 }) => {
   return (
     <section 
-      className={`relative w-full bg-primary overflow-hidden py-16 lg:py-24 ${className}`}
+      className={`relative w-full overflow-hidden py-16 lg:py-24 ${className}`}
+      style={{
+        background: 'linear-gradient(to bottom, #4387C7, #214261)'
+      }}
       aria-labelledby="integrated-system-heading"
     >
       {/* Decorative Elements */}
       <div className="absolute top-20 right-20 w-32 h-32 bg-cyan-400 rounded-full opacity-20 blur-xl" />
-      <div className="absolute bottom-20 right-80 w-24 h-24 bg-cyan-300 rounded-full opacity-30 blur-lg" />
+      <div className="absolute bottom-20 left-80 w-24 h-24 bg-cyan-300 rounded-full opacity-30 blur-lg" />
       
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -20,8 +23,8 @@ const IntegratedSystemSection: React.FC<IntegratedSystemSectionProps> = ({
           <div className="relative z-10 order-2 lg:order-1">
             <div className="relative">
               <img 
-                src="/lovable-uploads/173573ac-8c76-443a-8f55-4876165896c7.png"
-                alt="R.Pay integrated dashboard system interface"
+                src="/lovable-uploads/7289d579-05a4-4ed4-956a-a785d553e06c.png"
+                alt="R.Pay integrated dashboard system interface on laptop"
                 className="w-full h-auto object-contain drop-shadow-2xl"
                 loading="lazy"
               />
@@ -61,7 +64,7 @@ const IntegratedSystemSection: React.FC<IntegratedSystemSectionProps> = ({
                 lineHeight: '1.8'
               }}
             >
-              نتيح لك قبول المدفوعات بسهولة وتنظيم عملياتك بكفاءة وزيادة مبيعاتك. كما 
+              نتيح لك قبول المدفوعات بسهولة، وتنظيم عملياتك بكفاءة، وزيادة مبيعاتك. كما 
               يمنح عملائك تجربة سلسة مدعومة بأدوات تحليل ذكية توفر لك رؤى أعمق وأداء أكثر 
               فعالية
             </p>
