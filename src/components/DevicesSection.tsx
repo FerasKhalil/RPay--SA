@@ -20,28 +20,28 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({
       id: 'boxing-machine',
       nameAr: 'آلة الملاكمة',
       nameEn: 'Boxing Machine',
-      imageUrl: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?w=300&h=400&fit=crop',
-      alt: 'Boxing arcade machine with digital scoring display and punching bag'
+      imageUrl: '/lovable-uploads/ebf5f335-252d-40b3-a723-e629a53bfbec.png',
+      alt: 'Professional boxing arcade machine with digital scoring display and punching bag'
     },
     {
       id: 'arcade-game',
       nameAr: 'آلة الألعاب',
       nameEn: 'Arcade Game Machine',
-      imageUrl: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=300&h=400&fit=crop',
+      imageUrl: '/lovable-uploads/206c4192-0b6f-41a4-9f5b-2867eb163cc9.png',
       alt: 'Classic arcade game machine with colorful display and control buttons'
     },
     {
       id: 'vending-machine',
       nameAr: 'آلة البيع الآلي',
       nameEn: 'Vending Machine',
-      imageUrl: 'https://images.unsplash.com/photo-1520637836862-4d197d17c668?w=300&h=400&fit=crop',
+      imageUrl: '/lovable-uploads/ee2b7f02-7476-4186-b258-e3cafae6d576.png',
       alt: 'Modern vending machine with snacks and beverages display'
     },
     {
       id: 'coffee-machine',
       nameAr: 'آلة القهوة',
       nameEn: 'Coffee Machine',
-      imageUrl: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=300&h=400&fit=crop',
+      imageUrl: '/lovable-uploads/d35d1f41-7bab-4fcc-ac1e-a4a486eaad0c.png',
       alt: 'Professional coffee vending machine with multiple beverage options'
     }
   ];
