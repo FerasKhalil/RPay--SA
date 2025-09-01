@@ -1,5 +1,6 @@
-import { memo } from "react";
+import { memo, useEffect, useRef } from "react";
 import Header from "./Header";
+
 interface PaymentMethod {
   id: string;
   name: string;
@@ -11,129 +12,156 @@ interface HeroSectionProps {
   className?: string;
 }
 
-const HeroSection: React.FC<HeroSectionProps> = memo(({
-  className = ""
-}) => {
-  const paymentMethods: PaymentMethod[] = [
-    {
-      id: 'mada',
-      name: 'Mada',
-      logo: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=60&h=40&fit=crop',
-      alt: 'Mada payment card logo'
-    },
-    {
-      id: 'mastercard',
-      name: 'Mastercard',
-      logo: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=60&h=40&fit=crop',
-      alt: 'Mastercard payment logo'
-    },
-    {
-      id: 'american-express',
-      name: 'American Express',
-      logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=60&h=40&fit=crop',
-      alt: 'American Express payment logo'
-    },
-    {
-      id: 'visa',
-      name: 'Visa',
-      logo: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=60&h=40&fit=crop',
-      alt: 'Visa payment card logo'
-    },
-    {
-      id: 'apple-pay',
-      name: 'Apple Pay',
-      logo: 'https://images.unsplash.com/photo-1611532736946-4e5dae86c6d8?w=60&h=40&fit=crop',
-      alt: 'Apple Pay digital payment logo'
-    },
-    {
-      id: 'samsung-pay',
-      name: 'Samsung Pay',
-      logo: 'https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=60&h=40&fit=crop',
-      alt: 'Samsung Pay digital payment logo'
+const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
+  const h1Ref = useRef<HTMLHeadingElement | null>(null);
+  const h2ARef = useRef<HTMLHeadingElement | null>(null);
+  const h2BRef = useRef<HTMLHeadingElement | null>(null);
+  const circleRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const targets: Array<{ el: HTMLElement | null; delay: string; extraClass?: string }> = [
+      { el: h1Ref.current, delay: "0ms" },
+      { el: h2ARef.current, delay: "120ms" },
+      { el: h2BRef.current, delay: "240ms" },
+      { el: circleRef.current, delay: "300ms", extraClass: "floaty" },
+    ];
+
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) {
+      targets.forEach((t) => t.el?.classList.add("reveal"));
+      return;
     }
-  ];
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const node = entry.target as HTMLElement;
+          if (entry.isIntersecting) {
+            node.classList.add("reveal");
+            if (node.dataset.float === "1") node.classList.add("floaty");
+            io.unobserve(node);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.2 }
+    );
+
+    targets.forEach((t) => {
+      if (!t.el) return;
+      t.el.style.setProperty("--delay", t.delay);
+      if (t.el === circleRef.current) {
+        t.el.dataset.float = "1";
+      }
+      io.observe(t.el);
+    });
+
+    return () => io.disconnect();
+  }, []);
 
   return (
     <section
       className={`relative w-full bg-[#EDEDED] overflow-hidden py-16 lg:py-24 ${className}`}
       aria-labelledby="integrated-payment-heading"
     >
+      {/* Local CSS for animations */}
+      <style>{`
+        .fadeUp {
+          opacity: 0;
+          transform: translateY(14px);
+          transition:
+            opacity 600ms ease-out var(--delay, 0ms),
+            transform 600ms ease-out var(--delay, 0ms);
+        }
+        .fadeUp.reveal { opacity: 1; transform: translateY(0); }
+
+        .circleEnter {
+          opacity: 0;
+          transform: translateX(16px) scale(0.98);
+          transition:
+            opacity 700ms ease-out var(--delay, 0ms),
+            transform 700ms ease-out var(--delay, 0ms);
+        }
+        .circleEnter.reveal {
+          opacity: 1;
+          transform: translateX(0) scale(1);
+        }
+
+        @keyframes floaty {
+          0% { transform: translateY(0); }
+          50% { transform: translateY(-6px); }
+          100% { transform: translateY(0); }
+        }
+        .floaty { animation: floaty 6s ease-in-out 800ms infinite; }
+
+        @media (prefers-reduced-motion: reduce) {
+          .fadeUp, .circleEnter { opacity: 1 !important; transform: none !important; transition: none !important; }
+          .floaty { animation: none !important; }
+        }
+      `}</style>
+
       <Header />
-      {/* Right gradient half circle - Background for device */}
+
+      {/* Circle (hidden on mobile) */}
       <div
-        className="absolute top-0 right-0 w-96 h-full rounded-l-full"
-        style={{
-          background: 'linear-gradient(to bottom, #54B1F2, #0D3259)'
-        }}
+        ref={circleRef}
+        className="circleEnter pointer-events-none absolute top-0 right-0 hidden h-full w-96 rounded-l-full md:block"
+        style={{ background: "linear-gradient(to bottom, #54B1F2, #0D3259)" }}
         aria-hidden="true"
       />
 
-      {/* Decorative WiFi Icons */}
-
-
-
-      <div className="relative max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Content - Text */}
-          <div className="space-y-8 relative z-10">
-            {/* Arabic Heading */}
+      <div className="relative mx-auto max-w-7xl px-6">
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          {/* Left Content */}
+          <div className="relative z-10 space-y-8 text-center lg:text-right">
             <h2
-              className="text-foreground font-bold leading-tight"
-              style={{
-                direction: 'ltr',
-                fontSize: 'clamp(24px, 5vw, 48px)',
-                fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
-                color: "#002741"
-              }}
+              ref={h1Ref}
+              className="fadeUp font-bold leading-tight text-[#002741]"
+              style={{ fontSize: "clamp(24px, 5vw, 48px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
               id="integrated-payment-heading"
             >
               حلول ذكية
             </h2>
+
             <h2
-              className="text-foreground font-bold leading-tight"
-              style={{
-                direction: 'ltr',
-                fontSize: 'clamp(4px, 4vw, 38px)',
-                fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
-                color: "#002741"
-              }}
-              id="integrated-payment-heading"
+              ref={h2ARef}
+              className="fadeUp font-bold leading-tight text-[#002741]"
+              style={{ fontSize: "clamp(4px, 4vw, 38px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
+              id="integrated-payment-subheading"
             >
               لمستقبـــــــــل أفضــــــل
             </h2>
+
             <h2
-              className="text-foreground font-bold leading-tight"
-              style={{
-                direction: 'ltr',
-                fontSize: 'clamp(24px, 2vw, 48px)',
-                fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
-                color: "#002741"
-              }}
-              id="integrated-payment-heading"
+              ref={h2BRef}
+              className="fadeUp font-bold leading-tight text-[#002741]"
+              style={{ fontSize: "clamp(24px, 2vw, 48px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
+              id="integrated-payment-subheading-en"
             >
               Smart Solutions
             </h2>
-            {/* Arabic Subheading */}
-            <div className="">
+
+            {/* Logo (centered on mobile) */}
+            <div className="flex justify-center lg:justify-end">
               <img
                 src="/lovable-uploads/98afb416-bf26-43aa-87c9-a5336bb6f2bb.png"
-                alt="R.Pay integrated smart payment device showing Remote Pay interface with contactless payment capabilities"
-                className="w-[150px] h-auto object-contain relative z-10"
+                alt="R.Pay logo"
+                className="relative z-10 h-auto w-[150px] object-contain"
+                loading="eager"
+                decoding="async"
               />
-
             </div>
           </div>
 
-          {/* Right Content - Device Image */}
+          {/* Right Content */}
           <div className="relative z-20 flex justify-center lg:justify-end">
             <div className="relative">
               <img
                 src="/lovable-uploads/cbd4e09c-f16f-4a62-8a2b-415b5cc9b864.png"
-                alt="R.Pay integrated smart payment device showing Remote Pay interface with contactless payment capabilities"
-                className="w-full h-auto  drop-shadow-4xl relative z-10"
+                alt="R.Pay payment device"
+                className="relative z-10 h-auto w-full drop-shadow-2xl"
                 loading="lazy"
+                decoding="async"
               />
-
             </div>
           </div>
         </div>
@@ -142,6 +170,5 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({
   );
 });
 
-HeroSection.displayName = 'HeroSection';
-
+HeroSection.displayName = "HeroSection";
 export default HeroSection;
