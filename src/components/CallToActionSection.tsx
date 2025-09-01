@@ -16,7 +16,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({
 
   return (
     <section
-      className={`relative w-full overflow-hidden py-16 lg:py-24 ${className}`}
+      className={`relative w-full overflow-hidden py-16 lg:py-1 lg:h-[355px] ${className}`}
       style={{
         background: 'linear-gradient(to bottom, #4387C7, #214261)'
       }}
