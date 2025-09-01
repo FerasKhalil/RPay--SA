@@ -1,13 +1,6 @@
 import { memo, useEffect, useRef } from "react";
 import Header from "./Header";
 
-interface PaymentMethod {
-  id: string;
-  name: string;
-  logo: string;
-  alt: string;
-}
-
 interface HeroSectionProps {
   className?: string;
 }
@@ -71,6 +64,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
           transition:
             opacity 600ms ease-out var(--delay, 0ms),
             transform 600ms ease-out var(--delay, 0ms);
+          will-change: opacity, transform;
         }
         .fadeUp.reveal { opacity: 1; transform: translateY(0); }
 
@@ -80,6 +74,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
           transition:
             opacity 700ms ease-out var(--delay, 0ms),
             transform 700ms ease-out var(--delay, 0ms);
+          will-change: opacity, transform;
         }
         .circleEnter.reveal {
           opacity: 1;
@@ -101,8 +96,8 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
 
       <Header />
 
-      {/* Slight negative margin to pull content closer to the header on mobile */}
-      <div className="block lg:hidden h-0 mt-[-126px]" aria-hidden="true" />
+      {/* Pull content a touch closer to header on mobile to kill the gap */}
+      <div className="block lg:hidden h-0 mt-[-90px]" aria-hidden="true" />
 
       {/* Circle (hidden on mobile) */}
       <div
@@ -112,14 +107,15 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-7xl px-6 mt-[-4px] sm:mt-0">
+      <div className="relative mx-auto max-w-7xl px-6">
+        {/* Grid: image below text on mobile; side-by-side on lg */}
         <div className="grid items-center gap-8 sm:gap-10 lg:gap-12 lg:grid-cols-2">
-          {/* Left Content */}
-          <div className="relative z-10 space-y-4 sm:space-y-6 lg:space-y-8 text-center lg:text-right">
+          {/* Text column */}
+          <div className="relative z-10 space-y-4 sm:space-y-6 lg:space-y-8 text-center lg:text-center">
             <h2
               ref={h1Ref}
               className="fadeUp font-bold leading-tight text-[#002741]"
-              style={{ fontSize: "clamp(26px, 6vw, 48px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
+              style={{ fontSize: "clamp(22px, 5vw, 78px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
               id="integrated-payment-heading"
             >
               حلول ذكية
@@ -128,7 +124,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
             <h2
               ref={h2ARef}
               className="fadeUp font-bold leading-tight text-[#002741]"
-              style={{ fontSize: "clamp(18px, 5vw, 38px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
+              style={{ fontSize: "clamp(18px, 4.2vw, 65px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
               id="integrated-payment-subheading"
             >
               لمستقبـــــــــل أفضــــــل
@@ -137,32 +133,33 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
             <h2
               ref={h2BRef}
               className="fadeUp font-bold leading-tight text-[#002741]"
-              style={{ fontSize: "clamp(20px, 4vw, 44px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
+              style={{ fontSize: "clamp(18px, 3.8vw, 70px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
               id="integrated-payment-subheading-en"
             >
               Smart Solutions
             </h2>
-
-            {/* Logo (centered on mobile) */}
-            <div className="flex justify-center lg:justify-end">
-              <img
-                src="/lovable-uploads/rpay_logo.png"
-                alt="R.Pay logo"
-                className="relative z-10 h-auto w-[150px] object-contain"
-                loading="eager"
-                decoding="async"
-              />
-            </div>
           </div>
 
-          {/* Right Content */}
-          <div className="relative z-20 flex justify-center lg:justify-end">
-            <div className="relative">
+          {/* Image column */}
+          <div className="relative">
+            {/* On mobile/tablet the image is just centered below text.
+                On desktop we shift it right & down a bit for that hero overlap look. */}
+            <div
+              className="
+                relative mx-auto
+                w-[min(88vw,520px)]
+                sm:w-[min(84vw,560px)]
+                md:w-[min(80vw,640px)]
+                lg:w-[640px] xl:w-[820px]
+                lg:translate-x-6 xl:translate-x-16
+                lg:translate-y-2 xl:translate-y-4
+                z-20
+              "
+            >
               <img
                 src="/lovable-uploads/hero_laptop_device.png"
                 alt="R.Pay payment device"
-                className="relative z-10 h-auto w-full drop-shadow-2xl"
-                loading="lazy"
+                className="w-full h-auto drop-shadow-2xl"
                 decoding="async"
               />
             </div>
