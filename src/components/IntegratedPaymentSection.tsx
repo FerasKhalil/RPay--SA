@@ -21,10 +21,15 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
     { id: "samsung-pay", name: "Samsung Pay", logo: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=60&h=40&fit=crop", alt: "Samsung Pay digital payment logo" },
   ];
 
-  // ----- Animation refs (stagger order) -----
-  const h2ArRef = useRef<HTMLHeadingElement | null>(null); // Arabic h2
-  const h3ArRef = useRef<HTMLHeadingElement | null>(null); // Arabic h3 "كيف يعمل"
-  const pArRef = useRef<HTMLParagraphElement | null>(null); // Arabic paragraph
+  // ----- Animation refs (unique per element) -----
+  const h2ArRef = useRef<HTMLHeadingElement | null>(null); // Arabic main h2
+
+  const arHowH3Ref = useRef<HTMLHeadingElement | null>(null); // "كيف يعمل"
+  const arHowPRef = useRef<HTMLParagraphElement | null>(null); // Arabic desc (how)
+
+  const arBenefitH3Ref = useRef<HTMLHeadingElement | null>(null); // "الفائدة"
+  const arBenefitPRef = useRef<HTMLParagraphElement | null>(null); // Arabic desc (benefit)
+
   const h4EnRef = useRef<HTMLHeadingElement | null>(null); // English h4
   const h5HowRef = useRef<HTMLHeadingElement | null>(null); // English h5 "How it works"
   const pHowRef = useRef<HTMLParagraphElement | null>(null); // English paragraph (how)
@@ -36,17 +41,20 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
   const circleRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+    // Keep reveal order matching visual order
     const targets: Array<{ el: HTMLElement | null; delay: string }> = [
       { el: h2ArRef.current, delay: "0ms" },
-      { el: h3ArRef.current, delay: "120ms" },
-      { el: pArRef.current, delay: "240ms" },
-      { el: h4EnRef.current, delay: "300ms" },
-      { el: h5HowRef.current, delay: "360ms" },
-      { el: pHowRef.current, delay: "420ms" },
-      { el: h5BenRef.current, delay: "480ms" },
-      { el: pBenRef.current, delay: "540ms" },
-      { el: h6Ref.current, delay: "600ms" },
-      { el: circleRef.current, delay: "300ms" }, // circle appears around same time as h4
+      { el: arHowH3Ref.current, delay: "120ms" },
+      { el: arHowPRef.current, delay: "240ms" },
+      { el: arBenefitH3Ref.current, delay: "300ms" },
+      { el: arBenefitPRef.current, delay: "360ms" },
+      { el: h4EnRef.current, delay: "420ms" },
+      { el: h5HowRef.current, delay: "480ms" },
+      { el: pHowRef.current, delay: "540ms" },
+      { el: h5BenRef.current, delay: "600ms" },
+      { el: pBenRef.current, delay: "660ms" },
+      { el: h6Ref.current, delay: "720ms" },
+      { el: circleRef.current, delay: "300ms" }, // circle enters around the Arabic block end
     ];
 
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -72,9 +80,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
     targets.forEach((t) => {
       if (!t.el) return;
       t.el.style.setProperty("--delay", t.delay);
-      if (t.el === circleRef.current) {
-        t.el.dataset.float = "1"; // start float after reveal
-      }
+      if (t.el === circleRef.current) t.el.dataset.float = "1";
       io.observe(t.el);
     });
 
@@ -88,7 +94,6 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
     >
       {/* Local CSS (same system as hero/about) */}
       <style>{`
-        /* Text: fade + slide-up */
         .fadeUp {
           opacity: 0;
           transform: translateY(14px);
@@ -99,7 +104,6 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
         }
         .fadeUp.reveal { opacity: 1; transform: translateY(0); }
 
-        /* Circle: enter (fade + slight slide/scale) */
         .circleEnter {
           opacity: 0;
           transform: translateX(16px) scale(0.98);
@@ -108,12 +112,8 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
             transform 700ms ease-out var(--delay, 0ms);
           will-change: opacity, transform;
         }
-        .circleEnter.reveal {
-          opacity: 1;
-          transform: translateX(0) scale(1);
-        }
+        .circleEnter.reveal { opacity: 1; transform: translateX(0) scale(1); }
 
-        /* Gentle float after reveal */
         @keyframes floaty {
           0%   { transform: translateY(0); }
           50%  { transform: translateY(-6px); }
@@ -121,14 +121,13 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
         }
         .floaty { animation: floaty 6s ease-in-out 800ms infinite; }
 
-        /* A11y */
         @media (prefers-reduced-motion: reduce) {
           .fadeUp, .circleEnter { opacity: 1 !important; transform: none !important; transition: none !important; }
           .floaty { animation: none !important; }
         }
       `}</style>
 
-      {/* Right gradient half circle - Background for device (animated + hidden on mobile) */}
+      {/* Right gradient half circle - hidden on mobile */}
       <div
         ref={circleRef}
         className="circleEnter absolute top-0 right-0 hidden h-full w-96 rounded-l-full md:block"
@@ -164,7 +163,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
 
             {/* Arabic Subheading */}
             <h3
-              ref={h3ArRef}
+              ref={arHowH3Ref}
               className="fadeUp text-primary font-semibold leading-tight"
               style={{ direction: "rtl", fontSize: "clamp(16px, 3vw, 30px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
             >
@@ -173,24 +172,25 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
 
             {/* Arabic Description */}
             <p
-              ref={pArRef}
+              ref={arHowPRef}
               className="fadeUp text-foreground/180 leading-relaxed"
               style={{ direction: "rtl", fontSize: "clamp(14px, 2.5vw, 25px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif", lineHeight: "1.6" }}
             >
               وحدة دفع إلكترونية داخل كل جهاز تدعم البطاقات والمحافظ الرقمية غير
               العمليات مباشرة في لوحة التحكم
             </p>
+
+            {/* Arabic Benefits */}
             <h3
-              ref={h3ArRef}
+              ref={arBenefitH3Ref}
               className="fadeUp text-primary font-semibold leading-tight"
               style={{ direction: "rtl", fontSize: "clamp(16px, 3vw, 30px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
             >
               الفائدة
             </h3>
 
-            {/* Arabic Description */}
             <p
-              ref={pArRef}
+              ref={arBenefitPRef}
               className="fadeUp text-foreground/180 leading-relaxed"
               style={{ direction: "rtl", fontSize: "clamp(14px, 2.5vw, 25px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif", lineHeight: "1.6" }}
             >
