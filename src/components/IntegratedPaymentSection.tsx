@@ -180,6 +180,22 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
               وحدة دفع إلكترونية داخل كل جهاز تدعم البطاقات والمحافظ الرقمية غير
               العمليات مباشرة في لوحة التحكم
             </p>
+            <h3
+              ref={h3ArRef}
+              className="fadeUp text-primary font-semibold leading-tight"
+              style={{ direction: "rtl", fontSize: "clamp(16px, 3vw, 30px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
+            >
+              الفائدة
+            </h3>
+
+            {/* Arabic Description */}
+            <p
+              ref={pArRef}
+              className="fadeUp text-foreground/180 leading-relaxed"
+              style={{ direction: "rtl", fontSize: "clamp(14px, 2.5vw, 25px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif", lineHeight: "1.6" }}
+            >
+              دفع آمن وسلس، تقليل النقد، وتعزيز الاحترافية
+            </p>
 
             {/* English Heading */}
             <h4
