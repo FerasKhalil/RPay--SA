@@ -166,7 +166,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
             <h3
               ref={h3ArRef}
               className="fadeUp text-primary font-semibold leading-tight"
-              style={{ direction: "rtl", fontSize: "clamp(16px, 3vw, 24px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
+              style={{ direction: "rtl", fontSize: "clamp(16px, 3vw, 30px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
             >
               كيف يعمل
             </h3>
@@ -174,8 +174,8 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
             {/* Arabic Description */}
             <p
               ref={pArRef}
-              className="fadeUp text-foreground/80 leading-relaxed"
-              style={{ direction: "rtl", fontSize: "clamp(14px, 2.5vw, 18px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif", lineHeight: "1.6" }}
+              className="fadeUp text-foreground/180 leading-relaxed"
+              style={{ direction: "rtl", fontSize: "clamp(14px, 2.5vw, 25px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif", lineHeight: "1.6" }}
             >
               وحدة دفع إلكترونية داخل كل جهاز تدعم البطاقات والمحافظ الرقمية غير
               العمليات مباشرة في لوحة التحكم
@@ -184,7 +184,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
             {/* English Heading */}
             <h4
               ref={h4EnRef}
-              className="fadeUp text-foreground font-bold leading-tight mt-8"
+              className="fadeUp text-foreground font-bold leading-tight mt-8 text-[#002741]"
               style={{ fontSize: "clamp(20px, 4vw, 36px)", fontFamily: "Inter, sans-serif" }}
             >
               Integrated Smart Payment
@@ -195,15 +195,15 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
               <h5
                 ref={h5HowRef}
                 className="fadeUp text-primary font-semibold"
-                style={{ fontSize: "clamp(14px, 2.5vw, 18px)", fontFamily: "Inter, sans-serif" }}
+                style={{ fontSize: "clamp(14px, 2.5vw, 30px)", fontFamily: "Inter, sans-serif" }}
               >
                 How it works
               </h5>
 
               <p
                 ref={pHowRef}
-                className="fadeUp text-foreground/80 leading-relaxed"
-                style={{ fontSize: "clamp(13px, 2vw, 16px)", fontFamily: "Inter, sans-serif", lineHeight: "1.6" }}
+                className="fadeUp text-foreground/180 leading-relaxed"
+                style={{ fontSize: "clamp(13px, 2vw, 20px)", fontFamily: "Inter, sans-serif", lineHeight: "1.6" }}
               >
                 Embedded electronic payment unit in every machine Supports cards and digital wallets with real-time dashboard integration
               </p>
@@ -214,15 +214,15 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
               <h5
                 ref={h5BenRef}
                 className="fadeUp text-primary font-semibold"
-                style={{ fontSize: "clamp(14px, 2.5vw, 18px)", fontFamily: "Inter, sans-serif" }}
+                style={{ fontSize: "clamp(14px, 2.5vw, 30px)", fontFamily: "Inter, sans-serif" }}
               >
                 Benefits
               </h5>
 
               <p
                 ref={pBenRef}
-                className="fadeUp text-foreground/80 leading-relaxed"
-                style={{ fontSize: "clamp(13px, 2vw, 16px)", fontFamily: "Inter, sans-serif", lineHeight: "1.6" }}
+                className="fadeUp text-foreground/180 leading-relaxed"
+                style={{ fontSize: "clamp(13px, 2vw, 20px)", fontFamily: "Inter, sans-serif", lineHeight: "1.6" }}
               >
                 Secure seamless payment, Less cash handling, and enhanced professionalism
               </p>
@@ -233,7 +233,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
               <h6
                 ref={h6Ref}
                 className="fadeUp text-foreground font-medium"
-                style={{ fontSize: "clamp(12px, 2vw, 14px)", fontFamily: "Inter, sans-serif" }}
+                style={{ fontSize: "clamp(12px, 2vw, 20px)", fontFamily: "Inter, sans-serif" }}
               >
                 Supported Payment Methods
               </h6>
