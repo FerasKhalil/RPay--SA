@@ -25,8 +25,7 @@ const FeaturesSection = () => {
   const features: Feature[] = [
     { id: "direct-rewards", icon: CreditCard, titleAr: "التحصيل المباشر في حساب العميل أو المستخدم", titleEn: "Direct rewards collection to the owner or user account" },
     { id: "game-activation", icon: Gamepad2, titleAr: "تشغيل الألعاب", titleEn: "Game activation" },
-    { id: "automatic-refund-games", icon: RefreshCw, titleAr: "استرداد تلقائي للألعاب", titleEn: "Automatic refund for games" },
-    { id: "automatic-refund-machines", icon: Smartphone, titleAr: "استرداد تلقائي للآلات الخدمة ذاتية", titleEn: "Automatic refund for self-service machines" },
+    { id: "automatic-refund-games", icon: RefreshCw, titleAr: "استرداد تلقائي", titleEn: "Automatic refund" },
     { id: "remote-control", icon: Cog, titleAr: "تحكم التحديث عن بُعد", titleEn: "Remote control and updates" },
     { id: "gps-geofencing", icon: MapPin, titleAr: "تتبع جغرافي", titleEn: "GPS Geofencing" },
     { id: "inventory-management", icon: Package, titleAr: "إدارة المخزون", titleEn: "Inventory management" },
