@@ -266,7 +266,7 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({ className = "" }) 
             ref={desc1Ref}
             className="fadeUp text-white/90 leading-relaxed max-w-3xl mx-auto"
             style={{
-              fontSize: "clamp(14px, 2.5vw, 22px)",
+              fontSize: "clamp(17px, 2.5vw, 22px)",
               fontFamily: "Inter, sans-serif",
               lineHeight: "1.6",
             }}
@@ -280,7 +280,7 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({ className = "" }) 
             ref={desc2Ref}
             className="fadeUp text-white/90 leading-relaxed max-w-3xl mx-auto"
             style={{
-              fontSize: "clamp(14px, 2.5vw, 22px)",
+              fontSize: "clamp(20px, 2.5vw, 22px)",
               fontFamily: "Inter, sans-serif",
               lineHeight: "1.6",
             }}
