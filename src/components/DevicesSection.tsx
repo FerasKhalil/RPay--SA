@@ -165,16 +165,16 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({ className = "" }) 
       `}</style>
 
       {/* Decorative Elements */}
-      <div
+      {/* <div
         ref={decoTopLeftRef}
-        className="absolute top-10 left-10 w-20 h-20 bg-cyan-400 rounded-full opacity-20 blur-xl"
+        className="hidden lg:block absolute top-10 left-10 w-20 h-20 bg-cyan-400 rounded-full opacity-20 blur-xl"
         aria-hidden="true"
       />
       <div
         ref={decoBottomRightRef}
-        className="absolute bottom-20 right-20 w-32 h-32 bg-cyan-300 rounded-full opacity-15 blur-2xl"
+        className="hidden lg:block absolute bottom-20 right-20 w-32 h-32 bg-cyan-300 rounded-full opacity-15 blur-4xl"
         aria-hidden="true"
-      />
+      /> */}
 
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Section Header */}

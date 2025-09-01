@@ -133,14 +133,17 @@ const IntegratedSystemSection: React.FC<IntegratedSystemSectionProps> = ({
       `}</style>
 
       {/* Decorative Elements */}
-      <div
+      {/* <div
         ref={decoTopRightRef}
-        className="bubbleEnter absolute top-20 right-20 w-32 h-32 bg-cyan-400 rounded-full opacity-20 blur-xl"
+        className="hidden lg:block absolute top-10 left-10 w-20 h-20 bg-cyan-400 rounded-full opacity-20 blur-xl"
+        aria-hidden="true"
       />
       <div
         ref={decoBottomLeftRef}
-        className="bubbleEnter absolute bottom-20 left-80 w-24 h-24 bg-cyan-300 rounded-full opacity-30 blur-lg"
-      />
+        className="hidden lg:block absolute bottom-20 right-20 w-32 h-32 bg-cyan-300 rounded-full opacity-15 blur-2xl"
+        aria-hidden="true"
+
+      /> */}
 
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
