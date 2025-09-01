@@ -64,17 +64,15 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
   return (
     <footer
       className={`w-full text-white py-8 ${className}`}
-      style={{
-        background: 'linear-gradient(to right, #3289B4, #194874)'
-      }}
+      style={{ background: 'linear-gradient(to right, #3289B4, #194874)' }}
       role="contentinfo"
     >
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
           {/* Left Section - Logo and Copyright */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-center lg:text-left">
             {/* R.Pay Logo */}
-            <div className="flex items-center space-x-3">
+            <div className="flex justify-center lg:justify-start items-center space-x-3">
               <img
                 src="/lovable-uploads/rpay_logo.png"
                 alt="R.Pay - Smart payment solutions"
@@ -85,23 +83,17 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
 
             {/* Copyright */}
             <div className="space-y-1">
-              <p
-                className="text-white/90 text-sm"
-                style={{ fontFamily: 'Inter, sans-serif' }}
-              >
+              <p className="text-white/90 text-sm" style={{ fontFamily: 'Inter, sans-serif' }}>
                 Copyright © {currentYear} R.Pay
               </p>
-              <p
-                className="text-white/80 text-xs"
-                style={{ fontFamily: 'Inter, sans-serif' }}
-              >
+              <p className="text-white/80 text-xs" style={{ fontFamily: 'Inter, sans-serif' }}>
                 All rights reserved
               </p>
             </div>
           </div>
 
           {/* Middle Section - Navigation Links */}
-          <div className="lg:text-center">
+          <div className="text-center lg:text-center">
             <nav aria-label="Footer navigation">
               <ul className="space-y-3">
                 {navigationLinks.map((link) => (
@@ -122,7 +114,7 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
           </div>
 
           {/* Right Section - Social Media */}
-          <div className="lg:text-right space-y-4">
+          <div className="space-y-4 text-center lg:text-right">
             <h3
               className="text-white font-medium text-sm"
               style={{ fontFamily: 'DIN Next LT Arabic, Inter, sans-serif' }}
@@ -132,7 +124,7 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
               <span>Follow Us</span>
             </h3>
 
-            <div className="flex items-center space-x-4 lg:justify-end">
+            <div className="flex justify-center lg:justify-end items-center space-x-4">
               {socialLinks.map((social) => (
                 <a
                   key={social.id}
@@ -142,12 +134,7 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <svg
-                    className="w-5 h-5"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d={social.icon} />
                   </svg>
                 </a>
@@ -160,21 +147,12 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
         <div className="mt-8 pt-6 border-t border-white/20">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-6 text-xs text-white/70">
-              <a href="/privacy" className="hover:text-white/90 transition-colors">
-                Privacy Policy
-              </a>
-              <a href="/terms" className="hover:text-white/90 transition-colors">
-                Terms of Service
-              </a>
-              <a href="/cookies" className="hover:text-white/90 transition-colors">
-                Cookie Policy
-              </a>
+              <a href="/privacy" className="hover:text-white/90 transition-colors">Privacy Policy</a>
+              <a href="/terms" className="hover:text-white/90 transition-colors">Terms of Service</a>
+              <a href="/cookies" className="hover:text-white/90 transition-colors">Cookie Policy</a>
             </div>
 
-            <p
-              className="text-xs text-white/70"
-              style={{ fontFamily: 'Inter, sans-serif' }}
-            >
+            <p className="text-xs text-white/70" style={{ fontFamily: 'Inter, sans-serif' }}>
               Made with ❤️ in Saudi Arabia
             </p>
           </div>
