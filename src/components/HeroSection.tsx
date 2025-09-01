@@ -88,138 +88,36 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({
             <h2
               className="text-foreground font-bold leading-tight"
               style={{
-                direction: 'rtl',
+                direction: 'ltr',
                 fontSize: 'clamp(24px, 5vw, 48px)',
                 fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
                 color: "#002741"
               }}
               id="integrated-payment-heading"
             >
-              حلول ذكية            </h2>
+              حلول ذكية
+            </h2>
             <h2
               className="text-foreground font-bold leading-tight"
               style={{
-                direction: 'rtl',
-                fontSize: 'clamp(24px, 5vw, 48px)',
+                direction: 'ltr',
+                fontSize: 'clamp(4px, 4vw, 38px)',
                 fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
                 color: "#002741"
               }}
               id="integrated-payment-heading"
             >
-              حلول ذكية            </h2>
+              لمستقبـــــــــل أفضــــــل
+            </h2>
 
             {/* Arabic Subheading */}
-            <h3
-              className="text-primary font-semibold leading-tight"
-              style={{
-                direction: 'rtl',
-                fontSize: 'clamp(16px, 3vw, 24px)',
-                fontFamily: 'DIN Next LT Arabic, Inter, sans-serif'
-              }}
-            >
-              كيف يعمل
-            </h3>
+            <div className="">
+              <img
+                src="/lovable-uploads/98afb416-bf26-43aa-87c9-a5336bb6f2bb.png"
+                alt="R.Pay integrated smart payment device showing Remote Pay interface with contactless payment capabilities"
+                className="w-[200px] h-auto object-contain relative z-10"
+              />
 
-            {/* Arabic Description */}
-            <p
-              className="text-foreground/80 leading-relaxed"
-              style={{
-                direction: 'rtl',
-                fontSize: 'clamp(14px, 2.5vw, 18px)',
-                fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
-                lineHeight: '1.6'
-              }}
-            >
-              وحدة دفع إلكترونية داخل كل جهاز تدعم البطاقات والمحافظ الرقمية غير
-              العمليات مباشرة في لوحة التحكم
-            </p>
-
-            {/* English Heading */}
-            <h4
-              className="text-foreground font-bold leading-tight mt-8"
-              style={{
-                fontSize: 'clamp(20px, 4vw, 36px)',
-                fontFamily: 'Inter, sans-serif'
-              }}
-            >
-              Integrated Smart Payment
-            </h4>
-
-            {/* How it works */}
-            <div className="space-y-4">
-              <h5
-                className="text-primary font-semibold"
-                style={{
-                  fontSize: 'clamp(14px, 2.5vw, 18px)',
-                  fontFamily: 'Inter, sans-serif'
-                }}
-              >
-                How it works
-              </h5>
-
-              <p
-                className="text-foreground/80 leading-relaxed"
-                style={{
-                  fontSize: 'clamp(13px, 2vw, 16px)',
-                  fontFamily: 'Inter, sans-serif',
-                  lineHeight: '1.6'
-                }}
-              >
-                Embedded electronic payment unit in every machine Supports cards and digital wallets with real-time dashboard integration
-              </p>
-            </div>
-
-            {/* Benefits */}
-            <div className="space-y-4">
-              <h5
-                className="text-primary font-semibold"
-                style={{
-                  fontSize: 'clamp(14px, 2.5vw, 18px)',
-                  fontFamily: 'Inter, sans-serif'
-                }}
-              >
-                Benefits
-              </h5>
-
-              <p
-                className="text-foreground/80 leading-relaxed"
-                style={{
-                  fontSize: 'clamp(13px, 2vw, 16px)',
-                  fontFamily: 'Inter, sans-serif',
-                  lineHeight: '1.6'
-                }}
-              >
-                Secure seamless payment, Less cash handling, and enhanced professionalism
-              </p>
-            </div>
-
-            {/* Payment Methods */}
-            <div className="space-y-4">
-              <h6
-                className="text-foreground font-medium"
-                style={{
-                  fontSize: 'clamp(12px, 2vw, 14px)',
-                  fontFamily: 'Inter, sans-serif'
-                }}
-              >
-                Supported Payment Methods
-              </h6>
-
-              <div className="flex flex-wrap items-center gap-4">
-                {paymentMethods.map((method) => (
-                  <div
-                    key={method.id}
-                    className="bg-white rounded-lg p-2 shadow-sm hover:shadow-md transition-shadow duration-200"
-                  >
-                    <img
-                      src={method.logo}
-                      alt={method.alt}
-                      className="w-12 h-8 object-contain"
-                      loading="lazy"
-                    />
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
 

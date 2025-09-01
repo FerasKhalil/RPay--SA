@@ -12,16 +12,7 @@ interface NavigationItem {
 interface HeaderProps {
   className?: string;
 }
-interface PaymentMethod {
-  id: string;
-  name: string;
-  logo: string;
-  alt: string;
-}
 
-interface HeroSectionProps {
-  className?: string;
-}
 const navigationItems: NavigationItem[] = [
   { id: 'home', labelAr: 'الرئيسية', labelEn: 'Home', href: '/', isActive: true },
   { id: 'about', labelAr: 'عن ار باي', labelEn: 'About R Pay', href: '/about' },
