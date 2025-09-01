@@ -12,8 +12,8 @@ interface DevicesSectionProps {
   className?: string;
 }
 
-const DevicesSection: React.FC<DevicesSectionProps> = memo(({ 
-  className = "" 
+const DevicesSection: React.FC<DevicesSectionProps> = memo(({
+  className = ""
 }) => {
   const supportedDevices: DeviceType[] = [
     {
@@ -47,7 +47,7 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({
   ];
 
   return (
-    <section 
+    <section
       className={`relative w-full overflow-hidden py-16 lg:py-24 ${className}`}
       style={{
         background: 'linear-gradient(to bottom, #4387C7, #214261)'
@@ -57,18 +57,18 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({
       {/* Decorative Elements */}
       <div className="absolute top-10 left-10 w-20 h-20 bg-cyan-400 rounded-full opacity-20 blur-xl" aria-hidden="true" />
       <div className="absolute bottom-20 right-20 w-32 h-32 bg-cyan-300 rounded-full opacity-15 blur-2xl" aria-hidden="true" />
-      
+
       <div className="relative max-w-7xl mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 space-y-6">
           {/* Arabic Heading with Bubble */}
           <div className="relative inline-block">
             <div className="absolute -top-2 -right-4 w-32 h-16 bg-cyan-400 rounded-full opacity-60 blur-lg" aria-hidden="true" />
-            
+
             <div className="relative bg-cyan-400/90 rounded-3xl px-8 py-4 backdrop-blur-sm">
-              <h2 
+              <h2
                 className="text-white font-bold leading-tight"
-                style={{ 
+                style={{
                   direction: 'rtl',
                   fontSize: 'clamp(18px, 4vw, 32px)',
                   fontFamily: 'DIN Next LT Arabic, Inter, sans-serif'
@@ -81,9 +81,9 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({
           </div>
 
           {/* English Heading */}
-          <h3 
+          <h3
             className="text-white font-semibold leading-tight"
-            style={{ 
+            style={{
               fontSize: 'clamp(16px, 3vw, 24px)',
               fontFamily: 'Inter, sans-serif'
             }}
@@ -101,7 +101,7 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({
             >
               {/* Device Image */}
               <div className="aspect-[3/4] overflow-hidden">
-                <img 
+                <img
                   src={device.imageUrl}
                   alt={device.alt}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
@@ -111,9 +111,9 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({
 
               {/* Device Info Overlay */}
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-                <h4 
+                <h4
                   className="text-white font-semibold text-center leading-tight"
-                  style={{ 
+                  style={{
                     direction: 'rtl',
                     fontSize: 'clamp(12px, 2vw, 16px)',
                     fontFamily: 'DIN Next LT Arabic, Inter, sans-serif'
@@ -121,9 +121,9 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({
                 >
                   {device.nameAr}
                 </h4>
-                <p 
+                <p
                   className="text-white/90 text-center mt-1"
-                  style={{ 
+                  style={{
                     fontSize: 'clamp(10px, 1.5vw, 12px)',
                     fontFamily: 'Inter, sans-serif'
                   }}
@@ -142,16 +142,27 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({
 
         {/* Bottom Description */}
         <div className="text-center mt-12">
-          <p 
+          <p
             className="text-white/90 leading-relaxed max-w-3xl mx-auto"
-            style={{ 
+            style={{
               fontSize: 'clamp(14px, 2.5vw, 18px)',
               fontFamily: 'Inter, sans-serif',
               lineHeight: '1.6'
             }}
           >
-            Our versatile payment solution seamlessly integrates with various self-service machines, 
+            Our versatile payment solution seamlessly integrates with various self-service machines,
             providing operators with comprehensive control and customers with convenient payment options.
+          </p>
+        </div>
+        <div className="text-center mt-12">
+          <p
+            className="text-white/90 leading-relaxed max-w-3xl mx-auto"
+            style={{
+              fontSize: 'clamp(14px, 2.5vw, 18px)',
+              fontFamily: 'Inter, sans-serif',
+              lineHeight: '1.6'
+            }}
+          >يتكامل حل الدفع متعدد الاستخدامات لدينا بسلاسة مع العديد من آلات الخدمة الذاتية، مما يوفر للمشغلين تحكمًا شاملاً وللعملاء خيارات دفع مريحm
           </p>
         </div>
       </div>

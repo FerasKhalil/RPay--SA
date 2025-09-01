@@ -101,7 +101,18 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({
             >
               لمستقبـــــــــل أفضــــــل
             </h2>
-
+            <h2
+              className="text-foreground font-bold leading-tight"
+              style={{
+                direction: 'ltr',
+                fontSize: 'clamp(24px, 2vw, 48px)',
+                fontFamily: 'DIN Next LT Arabic, Inter, sans-serif',
+                color: "#002741"
+              }}
+              id="integrated-payment-heading"
+            >
+              Smart Solutions
+            </h2>
             {/* Arabic Subheading */}
             <div className="">
               <img
