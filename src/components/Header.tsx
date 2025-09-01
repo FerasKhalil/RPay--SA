@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = memo(({ className = "" }) => {
           style={{ left: '152px', top: '33px' }}
         >
           <img
-            src="/lovable-uploads/f5776377-e440-44c1-ab5f-cb9635956f15.png"
+            src="/lovable-uploads/rpay_logo.png"
             alt="R.Pay - Smart payment solutions logo"
             style={{ width: '113px', height: '51.26px' }}
             className="object-contain"
@@ -79,7 +79,7 @@ const Header: React.FC<HeaderProps> = memo(({ className = "" }) => {
         <div className="block lg:hidden max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <img
-              src="/lovable-uploads/f5776377-e440-44c1-ab5f-cb9635956f15.png"
+              src="/lovable-uploads/rpay_logo.png"
               alt="R.Pay - Smart payment solutions logo"
               className="w-20 h-auto object-contain"
               loading="eager"

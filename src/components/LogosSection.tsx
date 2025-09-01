@@ -13,11 +13,11 @@ interface PartnerLogo {
 const LogosSection: React.FC<LogosSectionProps> = memo(({ className = "" }) => {
   const partnerLogos: PartnerLogo[] = [
     { name: "Beka", url: "/lovable-uploads/ecfd9f93-3b9d-45b2-9d49-bf56870f5e1c.png", alt: "Beka - Technology partner" },
-    { name: "BlvdCity", url: "/lovable-uploads/41b38bae-5bc8-47af-ab6a-de13b7bd7ece.png", alt: "BlvdCity - Strategic partner" },
-    { name: "Kinan", url: "/lovable-uploads/a2223f5f-cbe1-448a-901b-347a312bad21.png", alt: "Kinan - Business partner" },
-    { name: "BlvdWorld", url: "/lovable-uploads/24afde7f-c420-4988-a527-eec640ab9ae0.png", alt: "BlvdWorld - Innovation partner" },
+    { name: "BlvdCity", url: "/lovable-uploads/blvd_city_logo.png", alt: "BlvdCity - Strategic partner" },
+    { name: "Kinan", url: "/lovable-uploads/kinan_logo.png", alt: "Kinan - Business partner" },
+    { name: "BlvdWorld", url: "/lovable-uploads/blvd_world_logo.png", alt: "BlvdWorld - Innovation partner" },
     { name: "Rozana", url: "/lovable-uploads/bb5315a7-4bfc-4709-9a98-e83ccd80450f.png", alt: "Rozana - Cultural partner" },
-    { name: "LuLu", url: "/lovable-uploads/9692ff63-9b6c-42d2-9694-419455a12cbf.png", alt: "LuLu - Retail partner" },
+    { name: "LuLu", url: "/lovable-uploads/lulu_logo.png", alt: "LuLu - Retail partner" },
     { name: "Zaha", url: "/lovable-uploads/db128ec3-1a8c-469f-925a-09a31829f263.png", alt: "Zaha - Development partner" },
   ];
 

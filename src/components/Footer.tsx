@@ -62,10 +62,10 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer 
+    <footer
       className={`w-full text-white py-8 ${className}`}
-      style={{ 
-        background: 'linear-gradient(to right, #3289B4, #194874)' 
+      style={{
+        background: 'linear-gradient(to right, #3289B4, #194874)'
       }}
       role="contentinfo"
     >
@@ -75,23 +75,23 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
           <div className="space-y-4">
             {/* R.Pay Logo */}
             <div className="flex items-center space-x-3">
-              <img 
-                src="/lovable-uploads/f5776377-e440-44c1-ab5f-cb9635956f15.png"
+              <img
+                src="/lovable-uploads/rpay_logo.png"
                 alt="R.Pay - Smart payment solutions"
                 className="w-20 h-auto object-contain"
                 loading="lazy"
               />
             </div>
-            
+
             {/* Copyright */}
             <div className="space-y-1">
-              <p 
+              <p
                 className="text-white/90 text-sm"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
                 Copyright © {currentYear} R.Pay
               </p>
-              <p 
+              <p
                 className="text-white/80 text-xs"
                 style={{ fontFamily: 'Inter, sans-serif' }}
               >
@@ -123,7 +123,7 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
 
           {/* Right Section - Social Media */}
           <div className="lg:text-right space-y-4">
-            <h3 
+            <h3
               className="text-white font-medium text-sm"
               style={{ fontFamily: 'DIN Next LT Arabic, Inter, sans-serif' }}
             >
@@ -131,7 +131,7 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
               <span className="mx-2">•</span>
               <span>Follow Us</span>
             </h3>
-            
+
             <div className="flex items-center space-x-4 lg:justify-end">
               {socialLinks.map((social) => (
                 <a
@@ -142,9 +142,9 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <svg 
-                    className="w-5 h-5" 
-                    fill="currentColor" 
+                  <svg
+                    className="w-5 h-5"
+                    fill="currentColor"
                     viewBox="0 0 24 24"
                     aria-hidden="true"
                   >
@@ -170,8 +170,8 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
                 Cookie Policy
               </a>
             </div>
-            
-            <p 
+
+            <p
               className="text-xs text-white/70"
               style={{ fontFamily: 'Inter, sans-serif' }}
             >

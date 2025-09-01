@@ -117,7 +117,7 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
           {/* Right Content - Image */}
           <div ref={imgRef} className="relative z-10 -mb-20">
             <img
-              src="/lovable-uploads/7d76c3b9-ef60-4f7a-a76e-e4e99161aaf7.png"
+              src="/lovable-uploads/guy_with_device.png"
               alt="Saudi professional demonstrating R.Pay tablet interface for smart payment solutions"
               className="w-full h-auto object-contain"
               loading="lazy"

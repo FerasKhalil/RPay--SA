@@ -143,7 +143,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
             {/* Logo (centered on mobile) */}
             <div className="flex justify-center lg:justify-end">
               <img
-                src="/lovable-uploads/98afb416-bf26-43aa-87c9-a5336bb6f2bb.png"
+                src="/lovable-uploads/rpay_logo.png"
                 alt="R.Pay logo"
                 className="relative z-10 h-auto w-[150px] object-contain"
                 loading="eager"
@@ -156,7 +156,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
           <div className="relative z-20 flex justify-center lg:justify-end">
             <div className="relative">
               <img
-                src="/lovable-uploads/cbd4e09c-f16f-4a62-8a2b-415b5cc9b864.png"
+                src="/lovable-uploads/hero_laptop_device.png"
                 alt="R.Pay payment device"
                 className="relative z-10 h-auto w-full drop-shadow-2xl"
                 loading="lazy"
