@@ -49,16 +49,22 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
             </p>
 
             {/* English Heading */}
-            <h2
-              className="text-white font-bold leading-tight"
-              style={{
-                fontSize: 'clamp(32px, 5vw, 48px)',
-                fontFamily: 'Inter, sans-serif'
-              }}
-              id="mission-heading"
-            >
-              Our Mission
-            </h2>
+
+            <div className="flex items-center space-x-4 mb-8" dir="ltr">
+              <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 bg-primary rounded-full" />
+              </div>
+              <span
+                className="text-white text-xl font-medium pr-4"
+                style={{
+                  fontSize: 'clamp(32px, 5vw, 48px)',
+                  fontFamily: 'Inter, sans-serif'
+                }}
+              >
+                Our Mission
+              </span>
+
+            </div>
 
             {/* English Description */}
             <p
