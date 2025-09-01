@@ -78,7 +78,7 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
               className="text-white leading-relaxed"
               style={{
                 direction: "rtl",
-                fontSize: "clamp(16px, 2.5vw, 18px)",
+                fontSize: "clamp(16px, 2.5vw, 22px)",
                 fontFamily: "DIN Next LT Arabic, Inter, sans-serif",
                 lineHeight: "1.6",
               }}

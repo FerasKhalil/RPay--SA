@@ -129,9 +129,10 @@ const FeaturesSection = () => {
                   className="text-foreground font-semibold mb-2 leading-tight"
                   style={{
                     direction: "rtl",
-                    fontSize: "16px",
+                    fontSize: "20px",
                     fontFamily: "DIN Next LT Arabic, Inter, sans-serif",
                     minHeight: "48px",
+                    color: "#214261"
                   }}
                 >
                   {feature.titleAr}
@@ -140,7 +141,7 @@ const FeaturesSection = () => {
                 {/* English Title */}
                 <p
                   className="text-muted-foreground text-sm leading-relaxed"
-                  style={{ fontFamily: "Inter, sans-serif", minHeight: "40px" }}
+                  style={{ fontFamily: "Inter, sans-serif", minHeight: "40px", fontSize: "16px" }}
                 >
                   {feature.titleEn}
                 </p>
