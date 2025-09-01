@@ -189,7 +189,7 @@ const IntegratedSystemSection: React.FC<IntegratedSystemSectionProps> = ({
               className="fadeUp text-white/90 leading-relaxed text-center lg:text-right"
               style={{
                 direction: "rtl",
-                fontSize: "clamp(14px, 2.5vw, 21px)",
+                fontSize: "clamp(20px, 2.5vw, 21px)",
                 fontFamily: "DIN Next LT Arabic, Inter, sans-serif",
                 lineHeight: "1.8",
               }}
@@ -223,7 +223,7 @@ const IntegratedSystemSection: React.FC<IntegratedSystemSectionProps> = ({
               ref={enPRef}
               className="fadeUp text-white/90 leading-relaxed text-center lg:text-left"
               style={{
-                fontSize: "clamp(14px, 2.5vw, 18px)",
+                fontSize: "clamp(16px, 2.5vw, 18px)",
                 fontFamily: "Inter, sans-serif",
                 lineHeight: "1.8",
               }}
