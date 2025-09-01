@@ -1,34 +1,72 @@
-import { memo } from "react";
+import { memo, useEffect, useRef } from "react";
 
 interface MissionSectionProps {
   className?: string;
 }
 
 const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) => {
+  // refs for staggered reveal
+  const arHeaderRef = useRef<HTMLDivElement | null>(null);
+  const arPRef = useRef<HTMLParagraphElement | null>(null);
+  const enHeaderRef = useRef<HTMLDivElement | null>(null);
+  const enPRef = useRef<HTMLParagraphElement | null>(null);
+  const imgRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const items: Array<{ el: HTMLElement | null; delay: string }> = [
+      { el: arHeaderRef.current, delay: "0ms" },
+      { el: arPRef.current, delay: "140ms" },
+      { el: enHeaderRef.current, delay: "280ms" },
+      { el: enPRef.current, delay: "420ms" },
+      { el: imgRef.current, delay: "320ms" },
+    ];
+
+    if (prefersReduced) {
+      items.forEach(i => i.el?.classList.add("reveal"));
+      return;
+    }
+
+    const io = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            (entry.target as HTMLElement).classList.add("reveal");
+            io.unobserve(entry.target);
+          }
+        });
+      },
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.2 }
+    );
+
+    items.forEach(i => {
+      if (!i.el) return;
+      i.el.classList.add("fadeUp");
+      i.el.style.setProperty("--delay", i.delay);
+      io.observe(i.el);
+    });
+
+    return () => io.disconnect();
+  }, []);
+
   return (
     <section
       className={`relative w-full overflow-hidden ${className}`}
-      style={{
-        background: "linear-gradient(to bottom, #4387C7, #214261)"
-      }}
+      style={{ background: "linear-gradient(to bottom, #4387C7, #214261)" }}
       aria-labelledby="mission-heading"
     >
-
       <div className="relative max-w-7xl mx-auto px-6 py-12 lg:py-20">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content - Text */}
           <div className="space-y-8 relative z-10">
             {/* Arabic Heading with icon */}
-            <div className="flex items-center space-x-4 mb-8 fade-in-up" dir="rtl">
+            <div ref={arHeaderRef} className="flex items-center space-x-4 mb-8" dir="rtl">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
                 <div className="w-8 h-8 bg-primary rounded-full" />
               </div>
               <span
                 className="text-white text-xl font-medium pr-4"
-                style={{
-                  fontSize: "clamp(32px, 5vw, 48px)",
-                  fontFamily: "Inter, sans-serif"
-                }}
+                style={{ fontSize: "clamp(32px, 5vw, 48px)", fontFamily: "Inter, sans-serif" }}
               >
                 مهمتنا
               </span>
@@ -36,12 +74,13 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
 
             {/* Arabic Text */}
             <p
-              className="text-white leading-relaxed fade-in-up"
+              ref={arPRef}
+              className="text-white leading-relaxed"
               style={{
                 direction: "rtl",
                 fontSize: "clamp(16px, 2.5vw, 18px)",
                 fontFamily: "DIN Next LT Arabic, Inter, sans-serif",
-                lineHeight: "1.6"
+                lineHeight: "1.6",
               }}
             >
               تمكين المشغلين من تعزيز الكفاءة التشغيلية وتقديم
@@ -49,16 +88,13 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
             </p>
 
             {/* English Heading with icon */}
-            <div className="flex items-center space-x-4 mb-8 fade-in-up" dir="ltr">
+            <div ref={enHeaderRef} className="flex items-center space-x-4 mb-8" dir="ltr">
               <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
                 <div className="w-8 h-8 bg-primary rounded-full" />
               </div>
               <span
                 className="text-white text-xl font-medium pr-4"
-                style={{
-                  fontSize: "clamp(32px, 5vw, 48px)",
-                  fontFamily: "Inter, sans-serif"
-                }}
+                style={{ fontSize: "clamp(32px, 5vw, 48px)", fontFamily: "Inter, sans-serif" }}
               >
                 Our Mission
               </span>
@@ -66,11 +102,12 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
 
             {/* English Description */}
             <p
-              className="text-white/90 leading-relaxed fade-in-up"
+              ref={enPRef}
+              className="text-white/90 leading-relaxed"
               style={{
                 fontSize: "clamp(16px, 2.5vw, 18px)",
                 fontFamily: "Inter, sans-serif",
-                lineHeight: "1.6"
+                lineHeight: "1.6",
               }}
             >
               To empower operators by enhancing operational efficiency and delivering a smooth service experience
@@ -78,7 +115,7 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
           </div>
 
           {/* Right Content - Image */}
-          <div className="relative z-10 -mb-20 fade-in-up">
+          <div ref={imgRef} className="relative z-10 -mb-20">
             <img
               src="/lovable-uploads/7d76c3b9-ef60-4f7a-a76e-e4e99161aaf7.png"
               alt="Saudi professional demonstrating R.Pay tablet interface for smart payment solutions"
@@ -91,25 +128,18 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
 
       {/* Animation Styles */}
       <style>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(30px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        .fade-in-up {
+        .fadeUp {
           opacity: 0;
-          animation: fadeInUp 1s ease-out forwards;
+          transform: translateY(14px);
+          transition:
+            opacity 600ms ease-out var(--delay, 0ms),
+            transform 600ms ease-out var(--delay, 0ms);
+          will-change: opacity, transform;
         }
-        .fade-in-up:nth-child(1) { animation-delay: 0.2s; }
-        .fade-in-up:nth-child(2) { animation-delay: 0.4s; }
-        .fade-in-up:nth-child(3) { animation-delay: 0.6s; }
-        .fade-in-up:nth-child(4) { animation-delay: 0.8s; }
+        .reveal { opacity: 1; transform: translateY(0); }
 
-        @keyframes pulse-slow {
-          0%, 100% { transform: scale(1); opacity: 0.8; }
-          50% { transform: scale(1.05); opacity: 1; }
-        }
-        .animate-pulse-slow {
-          animation: pulse-slow 6s ease-in-out infinite;
+        @media (prefers-reduced-motion: reduce) {
+          .fadeUp, .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
         }
       `}</style>
     </section>
