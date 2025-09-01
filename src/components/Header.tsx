@@ -18,8 +18,8 @@ const navigationItems: NavigationItem[] = [
   { id: 'about', labelAr: 'عن ار باي', labelEn: 'About R Pay', href: '/about' },
   { id: 'mission', labelAr: 'مهامنا', labelEn: 'Our Mission', href: '/mission' },
   { id: 'features', labelAr: 'المميزات', labelEn: 'Features', href: '/features' },
-  { id: 'devices', labelAr: 'الأجهزة', labelEn: 'Device', href: '/devices' },
-  { id: 'smart-payment', labelAr: 'الدفع الذكي المتقدم', labelEn: 'Integrated Smart', href: '/smart-payment' },
+  { id: 'devices', labelAr: 'الأجهزة', labelEn: 'Devices', href: '/devices' },
+  { id: 'smart-payment', labelAr: 'الدفع الذكي المتقدم', labelEn: 'Integrated Smart Payment', href: '/smart-payment' },
 ];
 
 const Header: React.FC<HeaderProps> = memo(({ className = "" }) => {
