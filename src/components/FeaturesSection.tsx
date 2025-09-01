@@ -99,7 +99,7 @@ const FeaturesSection = () => {
         <div ref={headerRef} className="fadeUp text-center mb-16">
           <h2
             className="text-primary font-bold mb-4"
-            style={{ fontSize: "clamp(20px, 4vw, 28px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
+            style={{ fontSize: "clamp(20px, 4vw, 38px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
           >
             <span style={{ direction: "rtl" }}>مزايا ار باي</span>
             <span className="mx-4">•</span>
