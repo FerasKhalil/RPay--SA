@@ -81,7 +81,7 @@ const LogosSection: React.FC<LogosSectionProps> = memo(({ className = "" }) => {
               <img
                 src={logo.url}
                 alt={logo.alt}
-                className="h-12 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
                 loading="lazy"
                 decoding="async"
               />
