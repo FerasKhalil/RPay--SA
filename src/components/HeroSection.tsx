@@ -107,7 +107,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({
               <img
                 src="/lovable-uploads/98afb416-bf26-43aa-87c9-a5336bb6f2bb.png"
                 alt="R.Pay integrated smart payment device showing Remote Pay interface with contactless payment capabilities"
-                className="w-[200px] h-auto object-contain relative z-10"
+                className="w-[150px] h-auto object-contain relative z-10"
               />
 
             </div>
@@ -119,7 +119,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({
               <img
                 src="/lovable-uploads/cbd4e09c-f16f-4a62-8a2b-415b5cc9b864.png"
                 alt="R.Pay integrated smart payment device showing Remote Pay interface with contactless payment capabilities"
-                className="w-[600px] h-[450px]  drop-shadow-4xl relative z-10"
+                className="w-full h-auto  drop-shadow-4xl relative z-10"
                 loading="lazy"
               />
 

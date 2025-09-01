@@ -53,12 +53,12 @@ const Header: React.FC<HeaderProps> = memo(({ className = "" }) => {
           style={{ left: '300px', top: '43px', width: '1006px', height: '28.14px' }}
           aria-label="Primary navigation"
         >
-          <ul className="flex items-center space-x-6 text-sm" role="menubar">
+          <ul className="flex items-center space-x-1 text-sm" role="menubar">
             {navigationItems.map((item) => (
               <li key={item.id} role="none">
                 <Button
                   variant={item.isActive ? "default" : "ghost"}
-                  className={`px-14 py-2 transition-colors duration-200 ${item.isActive
+                  className={`px-6 py-2 transition-colors duration-200 ${item.isActive
                     ? "text-white hover:bg-[#4386C6]/90"
                     : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
                     }`}
