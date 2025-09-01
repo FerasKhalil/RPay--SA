@@ -161,10 +161,7 @@ const IntegratedSystemSection: React.FC<IntegratedSystemSectionProps> = ({
           <div className="space-y-8 relative z-10 order-1 lg:order-2">
             {/* Arabic Section with Bubble */}
             <div className="relative">
-              <div
-                ref={accentArBubbleRef}
-                className="bubbleEnter absolute -top-4 -right-4 w-40 h-20 bg-cyan-400 rounded-full opacity-80 blur-sm"
-              />
+
               <div className="relative bg-cyan-400/90 rounded-3xl p-6 backdrop-blur-sm">
                 <h2
                   ref={arH2Ref}
@@ -201,10 +198,7 @@ const IntegratedSystemSection: React.FC<IntegratedSystemSectionProps> = ({
 
             {/* English Section with Bubble */}
             <div className="relative mt-12">
-              <div
-                ref={accentEnBubbleRef}
-                className="bubbleEnter absolute -bottom-4 -left-4 w-32 h-16 bg-cyan-300 rounded-full opacity-60 blur-sm"
-              />
+
               <div className="relative bg-cyan-400/90 rounded-3xl p-6 backdrop-blur-sm">
                 <h3
                   ref={enH3Ref}
