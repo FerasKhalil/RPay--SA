@@ -19,11 +19,11 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
   const circleRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const targets: Array<{ el: HTMLElement | null; delay: string; extraClass?: string }> = [
+    const targets: Array<{ el: HTMLElement | null; delay: string }> = [
       { el: h1Ref.current, delay: "0ms" },
       { el: h2ARef.current, delay: "120ms" },
       { el: h2BRef.current, delay: "240ms" },
-      { el: circleRef.current, delay: "300ms", extraClass: "floaty" },
+      { el: circleRef.current, delay: "300ms" },
     ];
 
     const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -38,7 +38,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
           const node = entry.target as HTMLElement;
           if (entry.isIntersecting) {
             node.classList.add("reveal");
-            if (node.dataset.float === "1") node.classList.add("floaty");
+            if (node === circleRef.current) node.classList.add("floaty");
             io.unobserve(node);
           }
         });
@@ -50,7 +50,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
       if (!t.el) return;
       t.el.style.setProperty("--delay", t.delay);
       if (t.el === circleRef.current) {
-        t.el.dataset.float = "1";
+        (t.el as HTMLElement).dataset.float = "1";
       }
       io.observe(t.el);
     });
@@ -60,7 +60,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
 
   return (
     <section
-      className={`relative w-full bg-[#EDEDED] overflow-hidden py-16 lg:py-24 ${className}`}
+      className={`relative w-full bg-[#EDEDED] overflow-hidden pt-6 pb-12 lg:py-24 ${className}`}
       aria-labelledby="integrated-payment-heading"
     >
       {/* Local CSS for animations */}
@@ -101,6 +101,9 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
 
       <Header />
 
+      {/* Slight negative margin to pull content closer to the header on mobile */}
+      <div className="block lg:hidden h-0 mt-[-126px]" aria-hidden="true" />
+
       {/* Circle (hidden on mobile) */}
       <div
         ref={circleRef}
@@ -109,14 +112,14 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-7xl px-6">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+      <div className="relative mx-auto max-w-7xl px-6 mt-[-4px] sm:mt-0">
+        <div className="grid items-center gap-8 sm:gap-10 lg:gap-12 lg:grid-cols-2">
           {/* Left Content */}
-          <div className="relative z-10 space-y-8 text-center lg:text-right">
+          <div className="relative z-10 space-y-4 sm:space-y-6 lg:space-y-8 text-center lg:text-right">
             <h2
               ref={h1Ref}
               className="fadeUp font-bold leading-tight text-[#002741]"
-              style={{ fontSize: "clamp(24px, 5vw, 48px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
+              style={{ fontSize: "clamp(26px, 6vw, 48px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
               id="integrated-payment-heading"
             >
               حلول ذكية
@@ -125,7 +128,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
             <h2
               ref={h2ARef}
               className="fadeUp font-bold leading-tight text-[#002741]"
-              style={{ fontSize: "clamp(4px, 4vw, 38px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
+              style={{ fontSize: "clamp(18px, 5vw, 38px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
               id="integrated-payment-subheading"
             >
               لمستقبـــــــــل أفضــــــل
@@ -134,7 +137,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
             <h2
               ref={h2BRef}
               className="fadeUp font-bold leading-tight text-[#002741]"
-              style={{ fontSize: "clamp(24px, 2vw, 48px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
+              style={{ fontSize: "clamp(20px, 4vw, 44px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
               id="integrated-payment-subheading-en"
             >
               Smart Solutions
