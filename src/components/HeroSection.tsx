@@ -1,5 +1,5 @@
 import { memo } from "react";
-
+import Header from "./Header";
 interface PaymentMethod {
   id: string;
   name: string;
@@ -58,6 +58,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({
       className={`relative w-full bg-[#EDEDED] overflow-hidden py-16 lg:py-24 ${className}`}
       aria-labelledby="integrated-payment-heading"
     >
+      <Header />
       {/* Right gradient half circle - Background for device */}
       <div
         className="absolute top-0 right-0 w-96 h-full rounded-l-full"
@@ -68,17 +69,8 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({
       />
 
       {/* Decorative WiFi Icons */}
-      <div className="absolute top-10 right-20 w-16 h-16 opacity-30 z-10">
-        <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-white">
-          <path d="M12 20h.01M8.5 16.5a5 5 0 017 0M5 13a10 10 0 0114 0M2 9.5a15.5 15.5 0 0120 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
 
-      <div className="absolute top-32 right-32 w-12 h-12 opacity-20 z-10">
-        <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-white">
-          <path d="M12 20h.01M8.5 16.5a5 5 0 017 0M5 13a10 10 0 0114 0M2 9.5a15.5 15.5 0 0120 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      </div>
+
 
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
