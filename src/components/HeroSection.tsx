@@ -123,7 +123,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
 
             <h2
               ref={h2ARef}
-              className="fadeUp font-bold leading-tight text-[#002741]"
+              className="fadeUp leading-tight text-[#002741]"
               style={{ fontSize: "clamp(18px, 4.2vw, 65px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
               id="integrated-payment-subheading"
             >
@@ -150,9 +150,9 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
                 w-[min(88vw,520px)]
                 sm:w-[min(84vw,560px)]
                 md:w-[min(80vw,640px)]
-                lg:w-[640px] xl:w-[820px]
-                lg:translate-x-6 xl:translate-x-16
-                lg:translate-y-2 xl:translate-y-4
+                lg:w-[640px] xl:w-[850px]
+                lg:-translate-x-20 -xl:translate-x-1
+                lg:translate-y-2 xl:translate-y-1
                 z-20
               "
             >
