@@ -5,7 +5,7 @@ interface CallToActionSectionProps {
 }
 
 const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({ className = "" }) => {
-  const whatsappNumber = "+966 50 123 4567"; // Replace with actual number
+  const whatsappNumber = "+962797348978"; // Replace with actual number
   const whatsappMessage = encodeURIComponent("مرحباً، أريد معرفة المزيد عن خدمات R.Pay");
 
   const handleWhatsAppClick = () => {

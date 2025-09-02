@@ -136,7 +136,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
       />
 
       {/* Decorative WiFi Icons (unchanged) */}
-      <div className="absolute top-10 right-20 w-16 h-16 opacity-30 z-10">
+      {/* <div className="absolute top-10 right-20 w-16 h-16 opacity-30 z-10">
         <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-white">
           <path d="M12 20h.01M8.5 16.5a5 5 0 017 0M5 13a10 10 0 0114 0M2 9.5a15.5 15.5 0 0120 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
@@ -145,7 +145,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
         <svg viewBox="0 0 24 24" fill="none" className="w-full h-full text-white">
           <path d="M12 20h.01M8.5 16.5a5 5 0 017 0M5 13a10 10 0 0114 0M2 9.5a15.5 15.5 0 0120 0" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-      </div>
+      </div> */}
 
       <div className="relative mx-auto max-w-7xl px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -265,6 +265,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
                       alt={method.alt}
                       className="w-12 h-8 object-contain"
                       loading="lazy"
+
                     />
                   </div>
                 ))}
@@ -273,13 +274,15 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
           </div>
 
           {/* Right Content - Device Image */}
-          <div className="relative z-20 flex justify-center lg:justify-end">
-            <div className="relative">
+          <div className="relative z-20 flex justify-center lg:justify-end mx-auto max-w-7xl">
+            <div className="relative z-10">
               <img
-                src="/lovable-uploads/mobile-left.png"
-                alt="R.Pay integrated smart payment device showing Remote Pay interface with contactless payment capabilities"
-                className="w-full max-w-md h-auto object-contain drop-shadow-2xl relative z-10"
+                src="/lovable-uploads/3.png"
+                alt="R.Pay mobile application interface showing payment and service management features"
+                style={{ width: "652.24px", height: "607px" }}
+                className="h-auto w-full object-contain"
                 loading="lazy"
+                decoding="async"
               />
             </div>
           </div>

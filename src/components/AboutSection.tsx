@@ -117,7 +117,12 @@ const AboutSection: React.FC<AboutSectionProps> = memo(({ className = "" }) => {
               src="/lovable-uploads/3.png"
               alt="R.Pay mobile application interface showing payment and service management features"
               style={{ width: "652.24px", height: "607px" }}
-              className="h-auto w-full object-contain"
+              className="h-auto w-full object-contain
+                sm: translate-x-20 sm: translate-y-20 
+                lg:translate-y-2 
+                xl:-translate-x-20
+                z-30
+              "
               loading="lazy"
               decoding="async"
             />
