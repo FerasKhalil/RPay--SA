@@ -98,28 +98,28 @@ const StatisticsSection: React.FC<StatisticsSectionProps> = memo(({
       id: 'new-features',
       targetNumber: 142,
       suffix: '',
-      labelEn: 'New Features',
+      labelEn: 'Total Sales - اجمالي المبيعات',
       color: 'text-blue-600'
     },
     {
       id: 'app-downloads',
       targetNumber: 28,
       suffix: 'k',
-      labelEn: 'App Download',
+      labelEn: 'Total Operations - اجمالي العمليات',
       color: 'text-green-600'
     },
     {
-      id: 'active-users',
-      targetNumber: 53,
-      suffix: 'M',
-      labelEn: 'Active Users',
+      id: 'devices-number',
+      targetNumber: 385,
+      suffix: '',
+      labelEn: 'Number of Devices - عدد الاجهزة',
       color: 'text-orange-600'
     },
     {
-      id: 'positive-rate',
-      targetNumber: 90,
-      suffix: '%',
-      labelEn: 'Positive Rate',
+      id: 'partners',
+      targetNumber: 12,
+      suffix: '',
+      labelEn: 'Our Partners - شركائنا',
       color: 'text-purple-600'
     }
   ];
@@ -188,7 +188,7 @@ const StatisticsSection: React.FC<StatisticsSectionProps> = memo(({
                     className={`text-muted-foreground font-medium transition-all duration-300 ${isVisible ? 'transform translateY-0 opacity-100' : 'transform translateY-4 opacity-0'
                       }`}
                     style={{
-                      fontSize: 'clamp(12px, 2vw, 16px)',
+                      fontSize: 'clamp(12px, 2vw, 18px)',
                       fontFamily: 'Inter, sans-serif',
                       transitionDelay: `${(index * 100) + 200}ms`
                     }}

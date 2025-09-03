@@ -20,6 +20,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
     { id: "mastercard", name: "Mastercard", logo: "/lovable-uploads/mastercard_logo.png", alt: "Mastercard Logo" },
     { id: "applepay", name: "Apple Pay", logo: "/lovable-uploads/applepay_logo.png", alt: "Apple Pay Logo" },
     { id: "samsungpay", name: "Samsung Pay", logo: "/lovable-uploads/samsungpay_logo.jpg", alt: "Samsung Pay Logo" },
+    { id: "stcpay", name: "STC Pay", logo: "/lovable-uploads/stcpay_logo.png", alt: "Samsung Pay Logo" },
   ];
 
   // ----- Animation refs (unique per element) -----
