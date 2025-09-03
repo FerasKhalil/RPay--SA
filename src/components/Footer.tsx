@@ -103,9 +103,9 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
                       className="text-white/90 hover:text-white text-sm transition-colors duration-200 block"
                       style={{ fontFamily: 'DIN Next LT Arabic, Inter, sans-serif' }}
                     >
-                      <span style={{ direction: 'rtl' }}>{link.labelAr}</span>
-                      <span className="mx-2">•</span>
                       <span>{link.labelEn}</span>
+                      <span className="mx-2">•</span>
+                      <span style={{ direction: 'rtl' }}>{link.labelAr}</span>
                     </a>
                   </li>
                 ))}
