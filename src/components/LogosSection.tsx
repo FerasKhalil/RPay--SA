@@ -26,77 +26,108 @@ const LogosSection: React.FC<LogosSectionProps> = memo(({ className = "" }) => {
     { name: "ShawarmaHouse", url: "/lovable-uploads/shawarma_house_logo.png", alt: "Shawarma House Logo" },
   ];
 
-  // Duplicate to create a seamless loop (x3 for safety on wide screens)
-  const logoSets = Array(3).fill(partnerLogos).flat();
-
   return (
-    <>
-      <section
-        className={`w-full py-16 overflow-hidden bg-white ${className}`}
-        aria-label="Our trusted partners"
-      >
-        {/* Marquee styles */}
-        <style>{`
+    <section
+      className={`w-full py-16 overflow-hidden bg-white ${className}`}
+      aria-label="Our trusted partners"
+    >
+      {/* Marquee styles */}
+      <style>{`
         .logos-viewport {
+          position: relative;
+          overflow: hidden;
+          /* Soft fade on edges */
           mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
           -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
         }
-        .logos-track {
-          display: inline-flex;
-          gap: 5rem; /* approx space-x-20 */
+
+        /* The long strip that moves */
+        .logos-strip {
+          display: flex;
+          flex-wrap: nowrap;
+          width: max-content;      /* shrink-to-fit actual content width */
           will-change: transform;
-          animation-name: logos-marquee;
-          animation-timing-function: linear;
-          animation-iteration-count: infinite;
+          backface-visibility: hidden;
           transform: translate3d(0,0,0);
+          animation: logos-marquee 15s linear infinite;
+          gap: 4rem;               /* space between logos */
+          align-items: center;
         }
-        /* Default (desktop) duration */
-        .logos-track { animation-duration: 28s; }
 
-        /* Tablet: faster */
+        /* One "set" of logos inside the strip */
+        .logos-set {
+          display: inline-flex;
+          flex-wrap: nowrap;
+          width: max-content;
+          gap: 4rem;
+          align-items: center;
+        }
+
+        /* Responsive speeds */
         @media (max-width: 1024px) {
-          .logos-track { animation-duration: 20s; }
+          .logos-strip { animation-duration: 20s; }
         }
-        /* Mobile: fastest */
         @media (max-width: 640px) {
-          .logos-track { animation-duration: 12s; }
+          .logos-strip { animation-duration: 12s; }
         }
 
-        /* Pause on hover for desktop (optional, ignored on touch) */
+        /* Pause on hover for desktops */
         @media (hover: hover) and (pointer: fine) {
-          .logos-viewport:hover .logos-track { animation-play-state: paused; }
+          .logos-viewport:hover .logos-strip { animation-play-state: paused; }
         }
 
-        /* Reduced motion: stop animation */
+        /* Reduced motion */
         @media (prefers-reduced-motion: reduce) {
-          .logos-track { animation: none !important; transform: none !important; }
+          .logos-strip { animation: none !important; transform: none !important; }
         }
 
-        /* Keyframes: move left by 33.333% to loop 3x content */
+        /* Move exactly half of the total width (since we render two identical sets) */
         @keyframes logos-marquee {
-          from { transform: translate3d(0, 0, 0); }
-          to   { transform: translate3d(-33.333%, 0, 0); }
+          0%   { transform: translate3d(0%, 0, 0); }
+          100% { transform: translate3d(-50%, 0, 0); }
         }
+
+        /* Image sizing: fixed height, natural width, no jump */
+        .logo-img {
+          height: 4rem;   /* ~44px; adjust as you like */
+          width: auto;
+          object-fit: contain;
+          opacity: 0.75;
+          transition: opacity 200ms ease;
+        }
+        .logo-img:hover { opacity: 1; }
       `}</style>
 
-        <div className="relative w-full logos-viewport">
-          {/* Single animated track containing 3x logos for seamless loop */}
-          <div className="logos-track">
-            {logoSets.map((logo, index) => (
-              <div key={`logo-${index}`} className="flex-shrink-0">
-                <img
-                  src={logo.url}
-                  alt={logo.alt}
-                  className="h-16 w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </div>
+      <div className="logos-viewport">
+        {/* We render TWO identical sets back-to-back so the loop is seamless */}
+        <div className="logos-strip" aria-hidden="false">
+          <div className="logos-set">
+            {partnerLogos.map((logo, i) => (
+              <img
+                key={`setA-${i}-${logo.name}`}
+                src={logo.url}
+                alt={logo.alt}
+                className="logo-img"
+                loading="lazy"
+                decoding="async"
+              />
+            ))}
+          </div>
+          <div className="logos-set" aria-hidden="true">
+            {partnerLogos.map((logo, i) => (
+              <img
+                key={`setB-${i}-${logo.name}`}
+                src={logo.url}
+                alt={logo.alt}
+                className="logo-img"
+                loading="lazy"
+                decoding="async"
+              />
             ))}
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 });
 
