@@ -97,7 +97,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
       {/* <Header /> */}
 
       {/* Pull content a touch closer to header on mobile to kill the gap */}
-      <div className="block lg:hidden h-0 mt-[-90px]" aria-hidden="true" />
+      <div className="block lg:hidden h-0 mt-[10px]" aria-hidden="true" />
 
       {/* Circle (hidden on mobile) */}
       <div
