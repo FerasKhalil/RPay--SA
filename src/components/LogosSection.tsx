@@ -12,15 +12,16 @@ interface PartnerLogo {
 
 const LogosSection: React.FC<LogosSectionProps> = memo(({ className = "" }) => {
   const partnerLogos: PartnerLogo[] = [
-    { name: "AlNadej", url: "/lovable-uploads/al_nadej_logo.png", alt: "Al Nadej Logo" },
-    { name: "BoulevardWord", url: "/lovable-uploads/boulevard_world_logo.svg", alt: "Boulevard World Logo" },
+    { name: "AlNadej", url: "/lovable-uploads/alnadej_logo.png", alt: "Al Nadej Logo" },
+    { name: "BoulevardWord", url: "/lovable-uploads/boulevard_world_logo.png", alt: "Boulevard World Logo" },
     { name: "Deera", url: "/lovable-uploads/deera_logo.png", alt: "Deera Logo" },
     { name: "Khozama", url: "/lovable-uploads/khozama_logo.png", alt: "Khozama Logo" },
-    { name: "Lulu", url: "/lovable-uploads/lulu_logo.webp", alt: "Lulu Logo" },
-    { name: "Sela", url: "/lovable-uploads/sela_logo.svg", alt: "Sela Logo" },
-    { name: "BoulevardCity", url: "/lovable-uploads/boulevard_city_logo.svg", alt: "Boulevard City Logo" },
-    { name: "DarAlArkan", url: "/lovable-uploads/dar_al_arkan.png", alt: "Dar Al Arkan Logo" },
-    { name: "Hamat", url: "/lovable-uploads/hamat_logo.webp", alt: "Hamat Logo" },
+    { name: "Lulu", url: "/lovable-uploads/lulu_logo.png", alt: "Lulu Logo" },
+    { name: "Sela", url: "/lovable-uploads/sela_logo.png", alt: "Sela Logo" },
+    { name: "BoulevardCity", url: "/lovable-uploads/boulevard_city_logo.png", alt: "Boulevard City Logo" },
+    { name: "Malahi", url: "/lovable-uploads/malahi_logo.png", alt: "Malahi Logo Logo" },
+    { name: "DarAlArkan", url: "/lovable-uploads/alarkan_logo.png", alt: "Dar Al Arkan Logo" },
+    { name: "Hamat", url: "/lovable-uploads/hamat_logo.png", alt: "Hamat Logo" },
     { name: "Kinan", url: "/lovable-uploads/kinan_logo.png", alt: "Kinan Logo" },
     { name: "Rawshan", url: "/lovable-uploads/rawshan_logo.svg", alt: "Rawshan Logo" },
     { name: "ShawarmaHouse", url: "/lovable-uploads/shawarma_house_logo.png", alt: "Shawarma House Logo" },
