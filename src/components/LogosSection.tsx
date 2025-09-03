@@ -12,25 +12,31 @@ interface PartnerLogo {
 
 const LogosSection: React.FC<LogosSectionProps> = memo(({ className = "" }) => {
   const partnerLogos: PartnerLogo[] = [
-    { name: "Beka", url: "/lovable-uploads/ecfd9f93-3b9d-45b2-9d49-bf56870f5e1c.png", alt: "Beka - Technology partner" },
-    { name: "BlvdCity", url: "/lovable-uploads/blvd_city_logo.png", alt: "BlvdCity - Strategic partner" },
-    { name: "Kinan", url: "/lovable-uploads/kinan_logo.png", alt: "Kinan - Business partner" },
-    { name: "BlvdWorld", url: "/lovable-uploads/blvd_world_logo.png", alt: "BlvdWorld - Innovation partner" },
-    { name: "Rozana", url: "/lovable-uploads/bb5315a7-4bfc-4709-9a98-e83ccd80450f.png", alt: "Rozana - Cultural partner" },
-    { name: "LuLu", url: "/lovable-uploads/lulu_logo.png", alt: "LuLu - Retail partner" },
-    { name: "Zaha", url: "/lovable-uploads/db128ec3-1a8c-469f-925a-09a31829f263.png", alt: "Zaha - Development partner" },
+    { name: "AlNadej", url: "/lovable-uploads/al_nadej_logo.png", alt: "Al Nadej Logo" },
+    { name: "BoulevardWord", url: "/lovable-uploads/boulevard_world_logo.svg", alt: "Boulevard World Logo" },
+    { name: "Deera", url: "/lovable-uploads/deera_logo.png", alt: "Deera Logo" },
+    { name: "Khozama", url: "/lovable-uploads/khozama_logo.png", alt: "Khozama Logo" },
+    { name: "Lulu", url: "/lovable-uploads/lulu_logo.webp", alt: "Lulu Logo" },
+    { name: "Sela", url: "/lovable-uploads/sela_logo.svg", alt: "Sela Logo" },
+    { name: "BoulevardCity", url: "/lovable-uploads/boulevard_city_logo.svg", alt: "Boulevard City Logo" },
+    { name: "DarAlArkan", url: "/lovable-uploads/dar_al_arkan.png", alt: "Dar Al Arkan Logo" },
+    { name: "Hamat", url: "/lovable-uploads/hamat_logo.webp", alt: "Hamat Logo" },
+    { name: "Kinan", url: "/lovable-uploads/kinan_logo.png", alt: "Kinan Logo" },
+    { name: "Rawshan", url: "/lovable-uploads/rawshan_logo.svg", alt: "Rawshan Logo" },
+    { name: "ShawarmaHouse", url: "/lovable-uploads/shawarma_house_logo.png", alt: "Shawarma House Logo" },
   ];
 
   // Duplicate to create a seamless loop (x3 for safety on wide screens)
   const logoSets = Array(3).fill(partnerLogos).flat();
 
   return (
-    <section
-      className={`w-full py-16 overflow-hidden bg-white ${className}`}
-      aria-label="Our trusted partners"
-    >
-      {/* Marquee styles */}
-      <style>{`
+    <>
+      <section
+        className={`w-full py-16 overflow-hidden bg-white ${className}`}
+        aria-label="Our trusted partners"
+      >
+        {/* Marquee styles */}
+        <style>{`
         .logos-viewport {
           mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
           -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
@@ -73,23 +79,24 @@ const LogosSection: React.FC<LogosSectionProps> = memo(({ className = "" }) => {
         }
       `}</style>
 
-      <div className="relative w-full logos-viewport">
-        {/* Single animated track containing 3x logos for seamless loop */}
-        <div className="logos-track">
-          {logoSets.map((logo, index) => (
-            <div key={`logo-${index}`} className="flex-shrink-0">
-              <img
-                src={logo.url}
-                alt={logo.alt}
-                className="h-16 w-auto object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
-          ))}
+        <div className="relative w-full logos-viewport">
+          {/* Single animated track containing 3x logos for seamless loop */}
+          <div className="logos-track">
+            {logoSets.map((logo, index) => (
+              <div key={`logo-${index}`} className="flex-shrink-0">
+                <img
+                  src={logo.url}
+                  alt={logo.alt}
+                  className="h-16 w-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 });
 

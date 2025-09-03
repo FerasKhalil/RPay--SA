@@ -114,14 +114,13 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({ classNam
       <div className="relative max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content - Professional with Device Overlay */}
-          <div className="relative z-10 order-2 lg:order-1">
-            <div ref={imgWrapRef} className="fadeUp relative">
+          <div className="relative z-10 order-2">
+            <div ref={imgWrapRef} className="fadeUp relative xl:-mt-9 lg:-mt-8 sm:mb-10">
               {/* Main Professional Image */}
               <img
-                src="/lovable-uploads/GuyWithLaptop.png"
+                src="/lovable-uploads/man_with_laptop.png"
                 alt="Professional Saudi businessman working with laptop for R.Pay smart payment solutions"
                 className="w-full h-auto object-contain"
-                loading="lazy"
                 decoding="async"
               />
             </div>

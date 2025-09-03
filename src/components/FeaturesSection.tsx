@@ -30,7 +30,7 @@ const FeaturesSection = () => {
     { id: "remote-control", icon: Cog, titleAr: "تحكم التحديث عن بُعد", titleEn: "Remote control and updates" },
     { id: "gps-geofencing", icon: MapPin, titleAr: "تتبع جغرافي", titleEn: "GPS Geofencing" },
     { id: "inventory-management", icon: Package, titleAr: "إدارة المخزون", titleEn: "Inventory management" },
-    { id: "white-label", icon: Tags, titleAr: "خيارات البطاقة", titleEn: "White label option" },
+    { id: "white-label", icon: Tags, titleAr: "اضافة علامتك التجارية", titleEn: "White label option" },
     { id: "real-time-dashboard", icon: BarChart3, titleAr: "لوحة مبيعات وتحليلات لحظية", titleEn: "Real-time sales dashboard and analytics" },
     { id: "device-monitoring", icon: Monitor, titleAr: "مراقبة حالة الجهاز الفورية", titleEn: "Instant device status monitoring" },
     { id: "remote-training", icon: Users, titleAr: "تدريب ودعم عن بُعد", titleEn: "Remote training and support" },
@@ -101,9 +101,9 @@ const FeaturesSection = () => {
             className="text-primary font-bold mb-4"
             style={{ fontSize: "clamp(20px, 4vw, 38px)", fontFamily: "DIN Next LT Arabic, Inter, sans-serif" }}
           >
-            <span style={{ direction: "rtl" }}>مزايا ار باي</span>
-            <span className="mx-4">•</span>
             <span>R.Pay Features</span>
+            <span className="mx-4">•</span>
+            <span style={{ direction: "rtl" }}>مزايا ار باي</span>
           </h2>
         </div>
 
