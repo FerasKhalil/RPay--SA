@@ -13,12 +13,13 @@ interface IntegratedPaymentSectionProps {
 
 const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo(({ className = "" }) => {
   const paymentMethods: PaymentMethod[] = [
-    { id: "mada", name: "Mada", logo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=60&h=40&fit=crop", alt: "Mada payment card logo" },
-    { id: "mastercard", name: "Mastercard", logo: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=60&h=40&fit=crop", alt: "Mastercard payment logo" },
-    { id: "american-express", name: "American Express", logo: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=60&h=40&fit=crop", alt: "American Express payment logo" },
-    { id: "visa", name: "Visa", logo: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=60&h=40&fit=crop", alt: "Visa payment card logo" },
-    { id: "apple-pay", name: "Apple Pay", logo: "https://images.unsplash.com/photo-1611532736946-4e5dae86c6d8?w=60&h=40&fit=crop", alt: "Apple Pay digital payment logo" },
-    { id: "samsung-pay", name: "Samsung Pay", logo: "https://images.unsplash.com/photo-1610945415295-d9bbf067e59c?w=60&h=40&fit=crop", alt: "Samsung Pay digital payment logo" },
+    { id: "mada", name: "Mada", logo: "/lovable-uploads/mada_logo.jpg", alt: "Mada payment card logo" },
+    { id: "gccnet", name: "Gccnet", logo: "/lovable-uploads/gccnet_logo.jpg", alt: "gccnet payment logo" },
+    { id: "amex", name: "Amex", logo: "/lovable-uploads/amex_logo.png", alt: "Amex Logo" },
+    { id: "visa", name: "Visa", logo: "/lovable-uploads/visa_logo.png", alt: "Visa Logo" },
+    { id: "mastercard", name: "Mastercard", logo: "/lovable-uploads/mastercard_logo.png", alt: "Mastercard Logo" },
+    { id: "applepay", name: "Apple Pay", logo: "/lovable-uploads/applepay_logo.png", alt: "Apple Pay Logo" },
+    { id: "samsungpay", name: "Samsung Pay", logo: "/lovable-uploads/samsungpay_logo.jpg", alt: "Samsung Pay Logo" },
   ];
 
   // ----- Animation refs (unique per element) -----
@@ -263,7 +264,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
                     <img
                       src={method.logo}
                       alt={method.alt}
-                      className="w-12 h-8 object-contain"
+                      className="w-12 h-12 object-contain"
                       loading="lazy"
 
                     />
