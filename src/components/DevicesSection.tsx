@@ -262,20 +262,7 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({ className = "" }) 
 
         {/* Bottom Description */}
         <div className="text-center mt-12">
-          <p
-            ref={desc1Ref}
-            className="fadeUp text-white/90 leading-relaxed max-w-3xl mx-auto"
-            style={{
-              fontSize: "clamp(17px, 2.5vw, 22px)",
-              fontFamily: "Inter, sans-serif",
-              lineHeight: "1.6",
-            }}
-          >
-            Our versatile payment solution seamlessly integrates with various self-service machines,
-            providing operators with comprehensive control and customers with convenient payment options
-          </p>
-        </div>
-        <div className="text-center mt-12">
+
           <p
             ref={desc2Ref}
             className="fadeUp text-white/90 leading-relaxed max-w-3xl mx-auto"
@@ -286,6 +273,20 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({ className = "" }) 
             }}
           >
             يتكامل حل الدفع متعدد الاستخدامات لدينا بسلاسة مع العديد من آلات الخدمة الذاتية، مما يوفر للمشغلين تحكمًا شاملاً وللعملاء خيارات دفع مريح
+          </p>
+        </div>
+        <div className="text-center mt-12">
+          <p
+            ref={desc1Ref}
+            className="fadeUp text-white/90 leading-relaxed max-w-3xl mx-auto"
+            style={{
+              fontSize: "clamp(17px, 2.5vw, 18px)",
+              fontFamily: "Inter, sans-serif",
+              lineHeight: "1.6",
+            }}
+          >
+            Our versatile payment solution seamlessly integrates with various self-service machines,
+            providing operators with comprehensive control and customers with convenient payment options
           </p>
         </div>
       </div>
