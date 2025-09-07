@@ -71,40 +71,39 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({ classNam
       >
         {/* Animation styles */}
         <style>{`
-          /* Fade/slide for text, image, button */
           .fadeUp {
             opacity: 0;
-            transform: translateY(14px);
+            transform: translateY(10px);
             transition:
-              opacity 600ms ease-out var(--delay, 0ms),
-              transform 600ms ease-out var(--delay, 0ms);
+              opacity 220ms ease-out var(--delay, 0ms),
+              transform 20ms ease-out var(--delay, 0ms);
             will-change: opacity, transform;
           }
           .fadeUp.reveal { opacity: 1; transform: translateY(0); }
 
-          /* Background overlay: gentle enter + float */
           .bubbleEnter {
             opacity: 0;
-            transform: scale(0.98);
+            transform: scale(0.1);
             transition:
-              opacity 700ms ease-out var(--delay, 0ms),
-              transform 700ms ease-out var(--delay, 0ms);
+              opacity 24ms ease-out var(--delay, 0ms),
+              transform 24ms ease-out var(--delay, 0ms);
             will-change: opacity, transform;
           }
-          .bubbleEnter.reveal { opacity: 1; transform: scale(1); }
+          .bubbleEnter.reveal { opacity: 0.1; transform: scale(0.1); }
 
           @keyframes floaty {
             0%   { transform: translateY(0) }
-            50%  { transform: translateY(-6px) }
+            50%  { transform: translateY(-4px) }
             100% { transform: translateY(0) }
           }
-          .floaty { animation: floaty 6s ease-in-out 800ms infinite; }
+          .floaty { animation: floaty 1s ease-in-out 40ms infinite; }
 
           @media (prefers-reduced-motion: reduce) {
-            .fadeUp, .bubbleEnter { opacity: 1 !important; transform: none !important; transition: none !important; }
+            .fadeUp, .bubbleEnter { opacity: 0.1 !important; transform: none !important; transition: none !important; }
             .floaty { animation: none !important; }
           }
         `}</style>
+
 
         {/* Background Decorative Elements */}
         <div
@@ -123,7 +122,6 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({ classNam
                   src="/lovable-uploads/man_with_laptop.png"
                   alt="Professional Saudi businessman working with laptop for R.Pay smart payment solutions"
                   className="w-full h-auto object-contain"
-                  decoding="async"
                 />
               </div>
             </div>
