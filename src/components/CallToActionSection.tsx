@@ -122,6 +122,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({ classNam
                   src="/lovable-uploads/man_with_laptop.png"
                   alt="Professional Saudi businessman working with laptop for R.Pay smart payment solutions"
                   className="w-full h-auto object-contain"
+                  decoding="auto"
                 />
               </div>
             </div>
