@@ -96,15 +96,15 @@ const StatisticsSection: React.FC<StatisticsSectionProps> = memo(({
   const statistics: StatisticItem[] = [
     {
       id: 'new-features',
-      targetNumber: 142,
-      suffix: '',
+      targetNumber: 11.9,
+      suffix: 'M',
       labelEn: 'Total Sales - اجمالي المبيعات',
       color: 'text-blue-600'
     },
     {
       id: 'app-downloads',
-      targetNumber: 28,
-      suffix: 'k',
+      targetNumber: 596,
+      suffix: 'K',
       labelEn: 'Total Operations - اجمالي العمليات',
       color: 'text-green-600'
     },
