@@ -112,7 +112,7 @@ const StatisticsSection: React.FC<StatisticsSectionProps> = memo(({
       id: 'devices-number',
       targetNumber: 385,
       suffix: '',
-      labelEn: 'Number of Devices - عدد الاجهزة',
+      labelEn: 'Devices Numbers - عدد الاجهزة',
       color: 'text-orange-600'
     },
     {
