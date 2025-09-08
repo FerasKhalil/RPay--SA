@@ -157,7 +157,7 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
               "
             >
               <img
-                src="/lovable-uploads/hero_laptop_device.png"
+                src="/lovable-uploads/laptop_device.png"
                 alt="R.Pay payment device"
                 className="w-full h-auto drop-shadow-2xl"
                 decoding="async"

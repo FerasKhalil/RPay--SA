@@ -13,7 +13,6 @@ import {
   Plus,
   Smartphone,
 } from "lucide-react";
-import { clamp } from "date-fns";
 
 interface Feature {
   id: string;
@@ -79,20 +78,22 @@ const FeaturesSection = () => {
     <section className="w-full bg-background py-16 lg:py-24">
       {/* Animation styles */}
       <style>{`
-        .fadeUp {
-          opacity: 0;
-          transform: translateY(14px);
-          transition:
-            opacity 550ms ease-out var(--delay, 0ms),
-            transform 550ms ease-out var(--delay, 0ms);
-          will-change: opacity, transform;
-        }
-        .fadeUp.reveal { opacity: 1; transform: translateY(0); }
+                  .fadeUp {
+            opacity: 0;
+            transform: translateY(10px);
+            transition:
+              opacity 220ms ease-out var(--delay, 0ms),
+              transform 220ms ease-out var(--delay, 0ms);
+            will-change: opacity, transform;
+          }
+          .fadeUp.reveal { opacity: 1; transform: translateY(0); }
 
-        @media (prefers-reduced-motion: reduce) {
-          .fadeUp { opacity: 1 !important; transform: none !important; transition: none !important; }
-        }
+          @media (prefers-reduced-motion: reduce) {
+            .fadeUp { opacity: 1 !important; transform: none !important; transition: none !important; }
+          }
+
       `}</style>
+
 
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}

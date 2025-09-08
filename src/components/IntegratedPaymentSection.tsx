@@ -279,7 +279,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
           <div className="relative z-20 flex justify-center lg:justify-end mx-auto max-w-7xl">
             <div className="relative z-10">
               <img
-                src="/lovable-uploads/3.png"
+                src="/lovable-uploads/rpay_device.png"
                 alt="R.Pay mobile application interface showing payment and service management features"
                 style={{ width: "652.24px", height: "607px" }}
                 className="h-auto w-full object-contain"
