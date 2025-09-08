@@ -116,7 +116,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({ classNam
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content - Professional with Device Overlay */}
             <div className="relative z-10 order-2">
-              <div ref={imgWrapRef} className="fadeUp relative xl:-mt-9 lg:-mt-8 sm:mb-10">
+              <div ref={imgWrapRef} className="fadeUp relative xl:-mt-9 lg:-mt-8 sm:mt-10 -mb-16">
                 {/* Main Professional Image */}
                 <img
                   src="/lovable-uploads/man_with_laptop.png"
@@ -196,6 +196,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({ classNam
                 </button>
               </div>
             </div>
+
           </div>
         </div>
       </section>
