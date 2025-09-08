@@ -119,9 +119,9 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
               className="text-white font-medium text-sm"
               style={{ fontFamily: 'DIN Next LT Arabic, Inter, sans-serif' }}
             >
-              <span style={{ direction: 'rtl' }}>تابعنا</span>
-              <span className="mx-2">•</span>
               <span>Follow Us</span>
+              <span className="mx-2">•</span>
+              <span style={{ direction: 'rtl' }}>تابعنا</span>
             </h3>
 
             <div className="flex justify-center lg:justify-end items-center space-x-4">
