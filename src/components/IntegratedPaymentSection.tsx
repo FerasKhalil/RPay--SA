@@ -276,7 +276,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
           </div>
 
           {/* Right Content - Device Image */}
-          <div className="relative z-20 flex justify-center lg:justify-end mx-auto max-w-7xl">
+          <div className="relative z-20 flex justify-center lg:justify-end mx-auto max-w-7xl -mb-32 -mt-24">
             <div className="relative z-10">
               <img
                 src="/lovable-uploads/rpay_device.png"
