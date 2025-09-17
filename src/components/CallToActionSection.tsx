@@ -70,39 +70,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({ classNam
         aria-labelledby="cta-heading"
       >
         {/* Animation styles */}
-        <style>{`
-          .fadeUp {
-            opacity: 0;
-            transform: translateY(10px);
-            transition:
-              opacity 220ms ease-out var(--delay, 0ms),
-              transform 20ms ease-out var(--delay, 0ms);
-            will-change: opacity, transform;
-          }
-          .fadeUp.reveal { opacity: 1; transform: translateY(0); }
 
-          .bubbleEnter {
-            opacity: 0;
-            transform: scale(0.1);
-            transition:
-              opacity 24ms ease-out var(--delay, 0ms),
-              transform 24ms ease-out var(--delay, 0ms);
-            will-change: opacity, transform;
-          }
-          .bubbleEnter.reveal { opacity: 0.1; transform: scale(0.1); }
-
-          @keyframes floaty {
-            0%   { transform: translateY(0) }
-            50%  { transform: translateY(-4px) }
-            100% { transform: translateY(0) }
-          }
-          .floaty { animation: floaty 1s ease-in-out 40ms infinite; }
-
-          @media (prefers-reduced-motion: reduce) {
-            .fadeUp, .bubbleEnter { opacity: 0.1 !important; transform: none !important; transition: none !important; }
-            .floaty { animation: none !important; }
-          }
-        `}</style>
 
 
         {/* Background Decorative Elements */}
@@ -119,7 +87,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({ classNam
               <div ref={imgWrapRef} className="fadeUp relative xl:-mt-9 lg:-mt-8 sm:mt-10 -mb-16">
                 {/* Main Professional Image */}
                 <img
-                  src="/lovable-uploads/man_with_laptop.png"
+                  src="/src/assets/man_with_laptop.png"
                   alt="Professional Saudi businessman working with laptop for R.Pay smart payment solutions"
                   className="w-full h-auto object-contain"
                   decoding="auto"

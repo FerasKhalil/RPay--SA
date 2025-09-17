@@ -151,7 +151,7 @@ const IntegratedSystemSection: React.FC<IntegratedSystemSectionProps> = ({
           <div className="relative z-10 order-2 lg:order-1">
             <div ref={laptopRef} className="fadeUp relative">
               <img
-                src="/lovable-uploads/LaptopAngleMockup.png"
+                src="/src/assets/LaptopAngleMockup.png"
                 alt="R.Pay integrated dashboard system interface on laptop"
                 className="w-full h-auto object-contain drop-shadow-2xl"
                 loading="lazy"

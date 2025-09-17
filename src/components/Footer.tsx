@@ -74,7 +74,7 @@ const Footer: React.FC<FooterProps> = memo(({ className = "" }) => {
             {/* R.Pay Logo */}
             <div className="flex justify-center lg:justify-start items-center space-x-3">
               <img
-                src="/lovable-uploads/rpay_logo.png"
+                src="/src/assets/rpay_logo.png"
                 alt="R.Pay - Smart payment solutions"
                 className="w-20 h-auto object-contain"
                 loading="lazy"

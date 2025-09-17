@@ -12,19 +12,19 @@ interface PartnerLogo {
 
 const LogosSection: React.FC<LogosSectionProps> = memo(({ className = "" }) => {
   const partnerLogos: PartnerLogo[] = [
-    { name: "AlNadej", url: "/lovable-uploads/alnadej_logo.png", alt: "Al Nadej Logo" },
-    { name: "BoulevardWord", url: "/lovable-uploads/boulevard_world_logo.png", alt: "Boulevard World Logo" },
-    { name: "Deera", url: "/lovable-uploads/deera_logo.png", alt: "Deera Logo" },
-    { name: "Khozama", url: "/lovable-uploads/khozama_logo.png", alt: "Khozama Logo" },
-    { name: "Lulu", url: "/lovable-uploads/lulu_logo.png", alt: "Lulu Logo" },
-    { name: "Sela", url: "/lovable-uploads/sela_logo.png", alt: "Sela Logo" },
-    { name: "BoulevardCity", url: "/lovable-uploads/boulevard_city_logo.png", alt: "Boulevard City Logo" },
-    { name: "Malahi", url: "/lovable-uploads/malahi_logo.png", alt: "Malahi Logo Logo" },
-    { name: "DarAlArkan", url: "/lovable-uploads/alarkan_logo.png", alt: "Dar Al Arkan Logo" },
-    { name: "Hamat", url: "/lovable-uploads/hamat_logo.png", alt: "Hamat Logo" },
-    { name: "Kinan", url: "/lovable-uploads/kinan_logo.png", alt: "Kinan Logo" },
-    { name: "Rawshan", url: "/lovable-uploads/rawshan_logo.svg", alt: "Rawshan Logo" },
-    { name: "ShawarmaHouse", url: "/lovable-uploads/shawarma_house_logo.png", alt: "Shawarma House Logo" },
+    { name: "AlNadej", url: "/src/assets/alnadej_logo.png", alt: "Al Nadej Logo" },
+    { name: "BoulevardWord", url: "/src/assets/boulevard_world_logo.png", alt: "Boulevard World Logo" },
+    { name: "Deera", url: "/src/assets/deera_logo.png", alt: "Deera Logo" },
+    { name: "Khozama", url: "/src/assets/khozama_logo.png", alt: "Khozama Logo" },
+    { name: "Lulu", url: "/src/assets/lulu_logo.png", alt: "Lulu Logo" },
+    { name: "Sela", url: "/src/assets/sela_logo.png", alt: "Sela Logo" },
+    { name: "BoulevardCity", url: "/src/assets/boulevard_city_logo.png", alt: "Boulevard City Logo" },
+    { name: "Malahi", url: "/src/assets/malahi_logo.png", alt: "Malahi Logo Logo" },
+    { name: "DarAlArkan", url: "/src/assets/alarkan_logo.png", alt: "Dar Al Arkan Logo" },
+    { name: "Hamat", url: "/src/assets/hamat_logo.png", alt: "Hamat Logo" },
+    { name: "Kinan", url: "/src/assets/kinan_logo.png", alt: "Kinan Logo" },
+    { name: "Rawshan", url: "/src/assets/rawshan_logo.svg", alt: "Rawshan Logo" },
+    { name: "ShawarmaHouse", url: "/src/assets/shawarma_house_logo.png", alt: "Shawarma House Logo" },
   ];
 
   // Start anim only when the first set is loaded + next paint, to avoid any initial snap.

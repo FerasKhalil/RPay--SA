@@ -1,6 +1,6 @@
 import { memo, useEffect, useRef } from "react";
 import Header from "./Header";
-
+import laptop_device from "../../src/assets/laptop_device.png"
 interface HeroSectionProps {
   className?: string;
 }
@@ -151,13 +151,13 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
                 sm:w-[min(84vw,560px)]
                 md:w-[min(80vw,640px)]
                 lg:w-[640px] xl:w-[850px]
-                lg:-translate-x-20 -xl:translate-x-1
+                lg:-translate-x-20 xl:-translate-x-10
                 lg:translate-y-2 xl:translate-y-1
                 z-20
               "
             >
               <img
-                src="/lovable-uploads/laptop_device.png"
+                src={laptop_device}
                 alt="R.Pay payment device"
                 className="w-full h-auto drop-shadow-2xl"
                 decoding="async"

@@ -13,14 +13,14 @@ interface IntegratedPaymentSectionProps {
 
 const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo(({ className = "" }) => {
   const paymentMethods: PaymentMethod[] = [
-    { id: "mada", name: "Mada", logo: "/lovable-uploads/mada_logo.jpg", alt: "Mada payment card logo" },
-    { id: "gccnet", name: "Gccnet", logo: "/lovable-uploads/gccnet_logo.jpg", alt: "gccnet payment logo" },
-    { id: "amex", name: "Amex", logo: "/lovable-uploads/amex_logo.png", alt: "Amex Logo" },
-    { id: "visa", name: "Visa", logo: "/lovable-uploads/visa_logo.png", alt: "Visa Logo" },
-    { id: "mastercard", name: "Mastercard", logo: "/lovable-uploads/mastercard_logo.png", alt: "Mastercard Logo" },
-    { id: "applepay", name: "Apple Pay", logo: "/lovable-uploads/applepay_logo.png", alt: "Apple Pay Logo" },
-    { id: "samsungpay", name: "Samsung Pay", logo: "/lovable-uploads/samsungpay_logo.jpg", alt: "Samsung Pay Logo" },
-    { id: "stcpay", name: "STC Pay", logo: "/lovable-uploads/stcpay_logo.png", alt: "Samsung Pay Logo" },
+    { id: "mada", name: "Mada", logo: "/src/assets/mada_logo.jpg", alt: "Mada payment card logo" },
+    { id: "gccnet", name: "Gccnet", logo: "/src/assets/gccnet_logo.jpg", alt: "gccnet payment logo" },
+    { id: "amex", name: "Amex", logo: "/src/assets/amex_logo.png", alt: "Amex Logo" },
+    { id: "visa", name: "Visa", logo: "/src/assets/visa_logo.png", alt: "Visa Logo" },
+    { id: "mastercard", name: "Mastercard", logo: "/src/assets/mastercard_logo.png", alt: "Mastercard Logo" },
+    { id: "applepay", name: "Apple Pay", logo: "/src/assets/applepay_logo.png", alt: "Apple Pay Logo" },
+    { id: "samsungpay", name: "Samsung Pay", logo: "/src/assets/samsungpay_logo.jpg", alt: "Samsung Pay Logo" },
+    { id: "stcpay", name: "STC Pay", logo: "/src/assets/stcpay_logo.png", alt: "Samsung Pay Logo" },
   ];
 
   // ----- Animation refs (unique per element) -----
@@ -279,7 +279,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
           <div className="relative z-20 flex justify-center lg:justify-end mx-auto max-w-7xl -mb-32 -mt-24">
             <div className="relative z-10">
               <img
-                src="/lovable-uploads/rpay_device.png"
+                src="/src/assets/rpay_device.png"
                 alt="R.Pay mobile application interface showing payment and service management features"
                 style={{ width: "652.24px", height: "607px" }}
                 className="h-auto w-full object-contain"
