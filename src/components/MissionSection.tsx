@@ -1,5 +1,5 @@
 import { memo, useEffect, useRef } from "react";
-
+import guy_with_device from "../assets/guy_with_device.png"
 interface MissionSectionProps {
   className?: string;
 }
@@ -117,7 +117,7 @@ const MissionSection: React.FC<MissionSectionProps> = memo(({ className = "" }) 
           {/* Right Content - Image */}
           <div ref={imgRef} className="relative z-10 -mb-20">
             <img
-              src="/src/assets/guy_with_device.png"
+              src={guy_with_device}
               alt="Saudi professional demonstrating R.Pay tablet interface for smart payment solutions"
               className="w-full h-auto object-contain"
               loading="lazy"

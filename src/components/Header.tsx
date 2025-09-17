@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { memo } from "react";
-
+import rpay_logo from "../assets/rpay_logo.png"
 interface NavigationItem {
   id: string;
   labelAr: string;
@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = memo(({ className = "" }) => {
           style={{ left: '152px', top: '33px' }}
         >
           <img
-            src="/src/assets/rpay_logo.png"
+            src={rpay_logo}
             alt="R.Pay - Smart payment solutions logo"
             style={{ width: '113px', height: '51.26px' }}
             className="object-contain"
@@ -79,7 +79,7 @@ const Header: React.FC<HeaderProps> = memo(({ className = "" }) => {
         <div className="block lg:hidden max-w-7xl mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <img
-              src="/src/assets/rpay_logo.png"
+              src={rpay_logo}
               alt="R.Pay - Smart payment solutions logo"
               className="w-20 h-auto object-contain"
               loading="eager"

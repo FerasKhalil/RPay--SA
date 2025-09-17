@@ -1,6 +1,6 @@
 import { memo, useEffect, useRef } from "react";
 import Header from "./Header";
-import laptop_device from "../../src/assets/laptop_device.png"
+import laptop_device from "../assets/laptop_device.png"
 interface HeroSectionProps {
   className?: string;
 }

@@ -1,5 +1,5 @@
 import { memo, useEffect, useRef } from "react";
-
+import man_with_laptop from "../assets/man_with_laptop.png"
 interface CallToActionSectionProps {
   className?: string;
 }
@@ -87,7 +87,7 @@ const CallToActionSection: React.FC<CallToActionSectionProps> = memo(({ classNam
               <div ref={imgWrapRef} className="fadeUp relative xl:-mt-9 lg:-mt-8 sm:mt-10 -mb-16">
                 {/* Main Professional Image */}
                 <img
-                  src="/src/assets/man_with_laptop.png"
+                  src={man_with_laptop}
                   alt="Professional Saudi businessman working with laptop for R.Pay smart payment solutions"
                   className="w-full h-auto object-contain"
                   decoding="auto"

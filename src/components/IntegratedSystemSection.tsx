@@ -1,5 +1,5 @@
 import { memo, useEffect, useRef } from "react";
-
+import LaptopAngleMockup from "../assets/LaptopAngleMockup.png"
 interface IntegratedSystemSectionProps {
   className?: string;
 }
@@ -151,7 +151,7 @@ const IntegratedSystemSection: React.FC<IntegratedSystemSectionProps> = ({
           <div className="relative z-10 order-2 lg:order-1">
             <div ref={laptopRef} className="fadeUp relative">
               <img
-                src="/src/assets/LaptopAngleMockup.png"
+                src={LaptopAngleMockup}
                 alt="R.Pay integrated dashboard system interface on laptop"
                 className="w-full h-auto object-contain drop-shadow-2xl"
                 loading="lazy"

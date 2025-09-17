@@ -1,5 +1,5 @@
 import { memo, useState, useEffect, useRef } from "react";
-
+import TabletFrontMockup from "../assets/TabletFrontMockup.png"
 interface StatisticItem {
   id: string;
   targetNumber: number;
@@ -209,7 +209,7 @@ const StatisticsSection: React.FC<StatisticsSectionProps> = memo(({
             style={{ transitionDelay: '800ms' }}
           >
             <img
-              src="/src/assets/TabletFrontMockup.png"
+              src={TabletFrontMockup}
               alt="R.Pay analytics dashboard showing business metrics including total purchases, reversals, machine count, branch count, and user statistics"
               className="w-full h-[auto] object-contain drop-shadow-2xl"
               loading="lazy"

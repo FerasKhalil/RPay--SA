@@ -1,5 +1,5 @@
 import { memo, useEffect, useRef } from "react";
-
+import rpay_device from "../assets/rpay_device.png"
 interface AboutSectionProps {
   className?: string;
 }
@@ -114,7 +114,7 @@ const AboutSection: React.FC<AboutSectionProps> = memo(({ className = "" }) => {
           {/* Left Content - Mobile Device Image */}
           <div className="relative z-10">
             <img
-              src="/src/assets/rpay_device.png"
+              src={rpay_device}
               alt="R.Pay mobile application interface showing payment and service management features"
               style={{ width: "652.24px", height: "607px" }}
               className="h-auto w-full object-contain

@@ -1,5 +1,13 @@
 import { memo, useEffect, useRef } from "react";
-
+import mada_logo from "../assets/mada_logo.jpg"
+import gccnet_logo from "../assets/gccnet_logo.jpg"
+import amex_logo from "../assets/amex_logo.png"
+import visa_logo from "../assets/visa_logo.png"
+import mastercard_logo from "../assets/mastercard_logo.png"
+import applepay_logo from "../assets/applepay_logo.png"
+import samsungpay_logo from "../assets/samsungpay_logo.jpg"
+import stcpay_logo from "../assets/stcpay_logo.png"
+import rpay_device from "../assets/rpay_device.png"
 interface PaymentMethod {
   id: string;
   name: string;
@@ -13,14 +21,14 @@ interface IntegratedPaymentSectionProps {
 
 const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo(({ className = "" }) => {
   const paymentMethods: PaymentMethod[] = [
-    { id: "mada", name: "Mada", logo: "/src/assets/mada_logo.jpg", alt: "Mada payment card logo" },
-    { id: "gccnet", name: "Gccnet", logo: "/src/assets/gccnet_logo.jpg", alt: "gccnet payment logo" },
-    { id: "amex", name: "Amex", logo: "/src/assets/amex_logo.png", alt: "Amex Logo" },
-    { id: "visa", name: "Visa", logo: "/src/assets/visa_logo.png", alt: "Visa Logo" },
-    { id: "mastercard", name: "Mastercard", logo: "/src/assets/mastercard_logo.png", alt: "Mastercard Logo" },
-    { id: "applepay", name: "Apple Pay", logo: "/src/assets/applepay_logo.png", alt: "Apple Pay Logo" },
-    { id: "samsungpay", name: "Samsung Pay", logo: "/src/assets/samsungpay_logo.jpg", alt: "Samsung Pay Logo" },
-    { id: "stcpay", name: "STC Pay", logo: "/src/assets/stcpay_logo.png", alt: "Samsung Pay Logo" },
+    { id: "mada", name: "Mada", logo: mada_logo, alt: "Mada payment card logo" },
+    { id: "gccnet", name: "Gccnet", logo: gccnet_logo, alt: "gccnet payment logo" },
+    { id: "amex", name: "Amex", logo: amex_logo, alt: "Amex Logo" },
+    { id: "visa", name: "Visa", logo: visa_logo, alt: "Visa Logo" },
+    { id: "mastercard", name: "Mastercard", logo: mastercard_logo, alt: "Mastercard Logo" },
+    { id: "applepay", name: "Apple Pay", logo: applepay_logo, alt: "Apple Pay Logo" },
+    { id: "samsungpay", name: "Samsung Pay", logo: samsungpay_logo, alt: "Samsung Pay Logo" },
+    { id: "stcpay", name: "STC Pay", logo: stcpay_logo, alt: "Samsung Pay Logo" },
   ];
 
   // ----- Animation refs (unique per element) -----
@@ -279,7 +287,7 @@ const IntegratedPaymentSection: React.FC<IntegratedPaymentSectionProps> = memo((
           <div className="relative z-20 flex justify-center lg:justify-end mx-auto max-w-7xl -mb-32 -mt-24">
             <div className="relative z-10">
               <img
-                src="/src/assets/rpay_device.png"
+                src={rpay_device}
                 alt="R.Pay mobile application interface showing payment and service management features"
                 style={{ width: "652.24px", height: "607px" }}
                 className="h-auto w-full object-contain"

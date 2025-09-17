@@ -1,5 +1,17 @@
 import { memo, useEffect, useRef, useState } from "react";
-
+import alnadej_logo from "../assets/alnadej_logo.png"
+import boulevard_world_logo from "../assets/boulevard_world_logo.png"
+import deera_logo from "../assets/deera_logo.png"
+import khozama_logo from "../assets/khozama_logo.png"
+import lulu_logo from "../assets/lulu_logo.png"
+import sela_logo from "../assets/sela_logo.png"
+import boulevard_city_logo from "../assets/boulevard_city_logo.png"
+import malahi_logo from "../assets/malahi_logo.png"
+import alarkan_logo from "../assets/alarkan_logo.png"
+import hamat_logo from "../assets/hamat_logo.png"
+import kinan_logo from "../assets/kinan_logo.png"
+import rawshan_logo from "../assets/rawshan_logo.svg"
+import shawarma_house_logo from "../assets/shawarma_house_logo.png"
 interface LogosSectionProps {
   className?: string;
 }
@@ -12,19 +24,19 @@ interface PartnerLogo {
 
 const LogosSection: React.FC<LogosSectionProps> = memo(({ className = "" }) => {
   const partnerLogos: PartnerLogo[] = [
-    { name: "AlNadej", url: "/src/assets/alnadej_logo.png", alt: "Al Nadej Logo" },
-    { name: "BoulevardWord", url: "/src/assets/boulevard_world_logo.png", alt: "Boulevard World Logo" },
-    { name: "Deera", url: "/src/assets/deera_logo.png", alt: "Deera Logo" },
-    { name: "Khozama", url: "/src/assets/khozama_logo.png", alt: "Khozama Logo" },
-    { name: "Lulu", url: "/src/assets/lulu_logo.png", alt: "Lulu Logo" },
-    { name: "Sela", url: "/src/assets/sela_logo.png", alt: "Sela Logo" },
-    { name: "BoulevardCity", url: "/src/assets/boulevard_city_logo.png", alt: "Boulevard City Logo" },
-    { name: "Malahi", url: "/src/assets/malahi_logo.png", alt: "Malahi Logo Logo" },
-    { name: "DarAlArkan", url: "/src/assets/alarkan_logo.png", alt: "Dar Al Arkan Logo" },
-    { name: "Hamat", url: "/src/assets/hamat_logo.png", alt: "Hamat Logo" },
-    { name: "Kinan", url: "/src/assets/kinan_logo.png", alt: "Kinan Logo" },
-    { name: "Rawshan", url: "/src/assets/rawshan_logo.svg", alt: "Rawshan Logo" },
-    { name: "ShawarmaHouse", url: "/src/assets/shawarma_house_logo.png", alt: "Shawarma House Logo" },
+    { name: "AlNadej", url: alnadej_logo, alt: "Al Nadej Logo" },
+    { name: "BoulevardWord", url: boulevard_world_logo, alt: "Boulevard World Logo" },
+    { name: "Deera", url: deera_logo, alt: "Deera Logo" },
+    { name: "Khozama", url: khozama_logo, alt: "Khozama Logo" },
+    { name: "Lulu", url: lulu_logo, alt: "Lulu Logo" },
+    { name: "Sela", url: sela_logo, alt: "Sela Logo" },
+    { name: "BoulevardCity", url: boulevard_city_logo, alt: "Boulevard City Logo" },
+    { name: "Malahi", url: malahi_logo, alt: "Malahi Logo Logo" },
+    { name: "DarAlArkan", url: alarkan_logo, alt: "Dar Al Arkan Logo" },
+    { name: "Hamat", url: hamat_logo, alt: "Hamat Logo" },
+    { name: "Kinan", url: kinan_logo, alt: "Kinan Logo" },
+    { name: "Rawshan", url: rawshan_logo, alt: "Rawshan Logo" },
+    { name: "ShawarmaHouse", url: shawarma_house_logo, alt: "Shawarma House Logo" },
   ];
 
   // Start anim only when the first set is loaded + next paint, to avoid any initial snap.

@@ -1,5 +1,8 @@
 import { memo, useEffect, useRef } from "react";
-
+import boxing_machine from "../assets/boxing_machine.png"
+import arcade_machine from "../assets/arcade_machine.png"
+import vending_machine from "../assets/vending_machine.png"
+import coffee_machine from "../assets/coffee_machine.png"
 interface DeviceType {
   id: string;
   nameAr: string;
@@ -18,28 +21,28 @@ const DevicesSection: React.FC<DevicesSectionProps> = memo(({ className = "" }) 
       id: "boxing-machine",
       nameAr: "آلة الملاكمة",
       nameEn: "Boxing Machine",
-      imageUrl: "/src/assets/boxing_machine.png",
+      imageUrl: boxing_machine,
       alt: "Professional boxing arcade machine with digital scoring display and punching bag",
     },
     {
       id: "arcade-game",
       nameAr: "آلة الألعاب",
       nameEn: "Arcade Game Machine",
-      imageUrl: "/src/assets/arcade_machine.png",
+      imageUrl: arcade_machine,
       alt: "Classic arcade game machine with colorful display and control buttons",
     },
     {
       id: "vending-machine",
       nameAr: "آلة البيع الآلي",
       nameEn: "Vending Machine",
-      imageUrl: "/src/assets/vending_machine.png",
+      imageUrl: vending_machine,
       alt: "Modern vending machine with snacks and beverages display",
     },
     {
       id: "coffee-machine",
       nameAr: "آلة القهوة",
       nameEn: "Coffee Machine",
-      imageUrl: "/src/assets/coffee_machine.png",
+      imageUrl: coffee_machine,
       alt: "Professional coffee vending machine with multiple beverage options",
     },
   ];
