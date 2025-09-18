@@ -158,8 +158,11 @@ const HeroSection: React.FC<HeroSectionProps> = memo(({ className = "" }) => {
             >
               <img
                 src={laptop_device}
+                srcSet={`${laptop_device}?w=400 400w, ${laptop_device}?w=800 800w, ${laptop_device}?w=1200 1200w`}
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 800px"
                 alt="R.Pay payment device"
                 className="w-full h-auto drop-shadow-2xl"
+                loading="eager"
                 decoding="async"
               />
             </div>
